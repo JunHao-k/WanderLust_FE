@@ -1,0 +1,28 @@
+body{
+    background-image: url(./travel.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+.search-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40vh
+}
+
+.location-checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-custom {
+    width: 226px
+}
+
+.overlay{
+    background-color: grey;
+}

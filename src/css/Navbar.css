@@ -13,7 +13,7 @@ nav .navbar-collapse.collapse{
         overflow: hidden;
     }
     nav .navbar-collapse.active{
-        height: 20vh !important;
+        height: 10vh !important;
     }
 }
 
