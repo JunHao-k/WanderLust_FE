@@ -10,7 +10,9 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 40vh
+    margin-top: 40vh;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .location-checkbox{
@@ -24,5 +26,9 @@ body{
 }
 
 .overlay{
+    height: 190px;
     background-color: grey;
+    width: 300px;
+    margin-left: 40px;
+    /* border: 1px solid black; */
 }
