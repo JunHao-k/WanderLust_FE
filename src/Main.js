@@ -9,6 +9,7 @@ export default class Main extends React.Component {
 
     state = {
         active: "home",
+        location: ""
     };
 
     setActive = (page) => {
@@ -21,7 +22,8 @@ export default class Main extends React.Component {
         if (this.state.active === "listing") {
           return (
             <React.Fragment>
-              <Listing />
+                <NavBar setActive = {this.setActive}/>
+                <Listing />
             </React.Fragment>
           );
         }
@@ -37,7 +39,7 @@ export default class Main extends React.Component {
           return(
             <React.Fragment>
               <NavBar setActive = {this.setActive}/>
-              <LandingPage/>
+              <LandingPage setActive = {this.setActive}/>
             </React.Fragment>
           )
         }
@@ -45,7 +47,7 @@ export default class Main extends React.Component {
 
     render() {
         return(
-            this.renderContent()
+            <React.Fragment>{this.renderContent()}</React.Fragment>
         )
     }
 }
