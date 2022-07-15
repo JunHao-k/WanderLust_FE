@@ -1,11 +1,16 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LandingPage from "./LandingPage";
+import Main from "./Main";
 
-export default function App() {
-  return (
-    <React.Fragment>
-      <LandingPage/>
-    </React.Fragment>
-  );
+
+export default class App extends React.Component {
+
+  render() {
+    return (
+      <React.Fragment>
+        <Main/>
+      </React.Fragment>
+    )
+  }
+
 }
