@@ -21,6 +21,9 @@ export default class Listing extends React.Component {
             data: response.data
         })
     }
+
+    // Limit pict size
+    // Text also limit height
     render() {
         return (
             <div >
