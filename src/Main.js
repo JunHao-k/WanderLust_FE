@@ -9,7 +9,7 @@ export default class Main extends React.Component {
 
   state = {
     active: "home",
-    locations: "",
+    searchBy: "",
     place: ""
   };
 
@@ -21,7 +21,7 @@ export default class Main extends React.Component {
 
   updateQuery = (searchBy) => {
     this.setState({
-        locations: searchBy
+        searchBy: searchBy
     })
   }
 
@@ -37,7 +37,7 @@ export default class Main extends React.Component {
         <React.Fragment>
           <NavBar setActive={this.setActive} />
           <Listing 
-            query = {this.state.locations}
+            query = {this.state.searchBy}
             place = {this.state.place}
           />
         </React.Fragment>
@@ -47,7 +47,11 @@ export default class Main extends React.Component {
       return (
         <React.Fragment>
           <NavBar setActive={this.setActive} />
-          <Contribute />
+          <Contribute 
+            setActive={this.setActive} 
+            updateQuery = {this.updateQuery}
+            updatePlace = {this.updatePlace}
+          />
         </React.Fragment>
       );
     }
@@ -58,7 +62,7 @@ export default class Main extends React.Component {
           <LandingPage 
             setActive={this.setActive} 
             updateQuery = {this.updateQuery}
-            searchLocation = {this.state.locations}
+            searchLocation = {this.state.searchBy}
             updatePlace = {this.updatePlace}
             place = {this.state.place}
           />

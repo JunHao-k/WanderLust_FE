@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-fwpudmsqmrm.ws-us54.gitpod.io/listings"
+    url = "https://8888-junhaok-wanderlustbe-b0uhltr83bo.ws-us54.gitpod.io/listings"
 
     state = {
         data: [],
