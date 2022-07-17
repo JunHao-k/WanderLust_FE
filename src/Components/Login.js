@@ -22,7 +22,7 @@ export default class Login extends React.Component{
                             <Form.Control type="email" placeholder="Enter email here" value = {this.props.email} 
                                 onChange = {(event) => {this.props.getEmail(event.target.value)}}/>
                         </Form.Group>
-                        <Button variant="custom bg-dark" id = "loginBtn" type="submit" onClick = {() => this.props.getData()}>
+                        <Button variant="custom bg-dark" id = "loginBtn" onClick = {() => this.props.getData()}>
                             Get my listings
                         </Button>
                     </Form>
