@@ -1,6 +1,6 @@
 import React from "react";
 import Form from 'react-bootstrap/Form';
-import '../css/contribute.css'
+import '../css/Contribute.css'
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
 
@@ -30,7 +30,7 @@ export default class Contribute extends React.Component {
         image_url: ""
     }
 
-    url = "https://8888-junhaok-wanderlustbe-b0uhltr83bo.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-j9cdgw3eeay.ws-us54.gitpod.io/"
     async componentDidMount() {
         let response1 = await axios.get(this.url + "countries")
         let response2 = await axios.get(this.url + "tags")
@@ -39,12 +39,6 @@ export default class Contribute extends React.Component {
             tagsData: response2.data
         })
     }
-
-    // redirectPage(){
-    //     if(this.state.listingToggle){
-    //         this.props.setActive('listing')
-    //     }
-    // }
     
     createListing = async () => {
         let res = await axios.post(this.url + "contribute" , {
@@ -217,7 +211,7 @@ export default class Contribute extends React.Component {
                     </Form.Group>
                     
 
-                    <Button variant="custom bg-warning mb-3"  type="submit" onClick={async () => {
+                    <Button variant="custom bg-warning mb-3" id = "contributeBtn" type="submit" onClick={async () => {
                             // Have to do await here to make sure database update this newest listing before redirecting to
                             // show the most updated listing
                             await this.createListing();  

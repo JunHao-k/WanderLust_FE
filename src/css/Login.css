@@ -1,0 +1,12 @@
+.login-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+#loginBtn{
+    /* background-color: rgba(0 , 0 , 0 , 0.08); */
+    color: white
+}

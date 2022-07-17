@@ -25,6 +25,9 @@ export default class NavBar extends React.Component {
                             <li className="nav-item">
                                 <a className="nav-link text-light" onClick={() => this.props.setActive('contribute')}>CONTRIBUTE</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-light" onClick={() => this.props.setActive('submission')}>MY SUBMISSIONS</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

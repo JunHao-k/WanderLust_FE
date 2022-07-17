@@ -2,6 +2,7 @@ import React from "react";
 import Listing from "./Pages/Listing";
 import Contribute from "./Pages/Contribute";
 import LandingPage from "./Pages/LandingPage";
+import Submission from "./Pages/Submission";
 import NavBar from "./Components/NavBar";
 
 
@@ -66,6 +67,14 @@ export default class Main extends React.Component {
             updatePlace = {this.updatePlace}
             place = {this.state.place}
           />
+        </React.Fragment>
+      )
+    }
+    else if(this.state.active === "submission"){
+      return(
+        <React.Fragment>
+          <NavBar setActive={this.setActive}/>
+          <Submission/>
         </React.Fragment>
       )
     }

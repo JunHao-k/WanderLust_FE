@@ -2,12 +2,12 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import '../css/listing.css'
+import '../css/Listing.css'
 import axios from 'axios';
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-b0uhltr83bo.ws-us54.gitpod.io/listings"
+    url = "https://8888-junhaok-wanderlustbe-j9cdgw3eeay.ws-us54.gitpod.io/listings"
 
     state = {
         data: [],
@@ -15,7 +15,7 @@ export default class Listing extends React.Component {
         place: this.props.place,        
     }
     async componentDidMount (){
-        
+    
         let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
         this.setState({
             data: response.data

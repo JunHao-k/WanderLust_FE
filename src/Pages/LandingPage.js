@@ -1,12 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/landing.css"
+import "../css/Landing.css"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 export default class LandingPage extends React.Component{
 
-    url = "https://8888-junhaok-wanderlustbe-b0uhltr83bo.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-j9cdgw3eeay.ws-us54.gitpod.io/"
 
     state = {
         show: true,

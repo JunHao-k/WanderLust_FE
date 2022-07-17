@@ -7,5 +7,9 @@
 
 .btn-custom {
     width: 226px;
+    /* margin-left: 70px; */
+}
+
+#contributeBtn{
     margin-left: 70px;
 }

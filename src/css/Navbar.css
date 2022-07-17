@@ -8,12 +8,12 @@ nav .navbar-collapse.collapse{
     display: block;
 }
 
-@media(max-width: 991px){
+@media screen and (max-width: 992px){
     nav .navbar-collapse.collapse{
         overflow: hidden;
     }
     nav .navbar-collapse.active{
-        height: 10vh !important;
+        height: 15vh !important;
     }
 }
 
