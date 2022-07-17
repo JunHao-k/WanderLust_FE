@@ -3,6 +3,7 @@ import Listing from "./Pages/Listing";
 import Contribute from "./Pages/Contribute";
 import LandingPage from "./Pages/LandingPage";
 import Submission from "./Pages/Submission";
+import Update from "./Pages/Update";
 import NavBar from "./Components/NavBar";
 
 
@@ -11,7 +12,8 @@ export default class Main extends React.Component {
   state = {
     active: "home",
     searchBy: "",
-    place: ""
+    place: "",
+    selectedListingId: ""
   };
 
   updatePlace = (value) => {
@@ -23,6 +25,13 @@ export default class Main extends React.Component {
   updateQuery = (searchBy) => {
     this.setState({
         searchBy: searchBy
+    })
+  }
+
+  selectListing = (listingId) => {
+    alert("Function ran")
+    this.setState({
+      selectedListingId: listingId
     })
   }
 
@@ -74,7 +83,18 @@ export default class Main extends React.Component {
       return(
         <React.Fragment>
           <NavBar setActive={this.setActive}/>
-          <Submission/>
+          <Submission 
+            setActive={this.setActive}
+            selectListing = {this.selectListing}
+          />
+        </React.Fragment>
+      )
+    }
+    else if(this.state.active === "update"){
+      return(
+        <React.Fragment>
+          <NavBar setActive={this.setActive}/>
+          <Update selectedListingId = {this.state.selectedListingId}/>
         </React.Fragment>
       )
     }

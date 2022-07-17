@@ -6,11 +6,13 @@ import axios from "axios";
 
 
 
-export default class Contribute extends React.Component {
+export default class Update extends React.Component {
 
     state = {
         countryData: [],
         tagsData: [],
+        selectedListingData: [],
+        targetId: this.props.selectedListingId,
         listingToggle: false,
 
         type: "",
@@ -34,10 +36,13 @@ export default class Contribute extends React.Component {
     async componentDidMount() {
         let response1 = await axios.get(this.url + "countries")
         let response2 = await axios.get(this.url + "tags")
+        let response3 = await axios.get(this.url + "listings/" + this.state.targetId)
         this.setState({
             countryData: response1.data,
-            tagsData: response2.data
+            tagsData: response2.data,
+            selectedListingData: response3.data
         })
+        console.log(this.state.selectedListingData.type)
     }
     
     createListing = async () => {
@@ -85,11 +90,17 @@ export default class Contribute extends React.Component {
         })
     }
 
+    updateState(){
+        this.setState({
+            type: this.state.selectedListingData.type
+        })
+    }
     
 
     render() {
         return (
             <React.Fragment>
+                {this.updateState()}
                 <div className="contribute-form">
 
                     <Form.Group className="p-3">

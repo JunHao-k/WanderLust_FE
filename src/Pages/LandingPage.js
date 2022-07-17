@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 
 export default class LandingPage extends React.Component{
 
-    url = "https://8888-junhaok-wanderlustbe-j9cdgw3eeay.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-ultao66f8gr.ws-us54.gitpod.io/"
 
     state = {
         show: true,
@@ -30,7 +30,7 @@ export default class LandingPage extends React.Component{
                                     <Form.Check type="radio" label="City" name = "location" value = "city" checked = {this.props.searchLocation === "city"} onChange = {() => this.props.updateQuery("city")}/>
                                 </Form.Group>
                             </div>
-                            <Button variant="custom bg-warning"  type="submit" onClick = {() => this.props.setActive('listing')}>
+                            <Button variant="custom bg-warning" onClick = {() => this.props.setActive('listing')}>
                                 Search
                             </Button>
                         </Form>

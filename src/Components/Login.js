@@ -6,12 +6,6 @@ import '../css/Login.css'
 
 export default class Login extends React.Component{
 
-    // url = "https://8888-junhaok-wanderlustbe-j9cdgw3eeay.ws-us54.gitpod.io/get-submissions"
-
-    // state = {
-    //     mySubmission: []
-    // }
-
 
     render(){
         return(
