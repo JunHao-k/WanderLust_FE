@@ -11,7 +11,7 @@ export default class Update extends React.Component {
     state = {
         countryData: [],
         tagsData: [],
-        selectedListingData: [],
+        selectedListingData: {},
         targetId: this.props.selectedListingId,
         listingToggle: false,
 
@@ -40,9 +40,8 @@ export default class Update extends React.Component {
         this.setState({
             countryData: response1.data,
             tagsData: response2.data,
-            selectedListingData: response3.data
+            selectedListingData: response3.data // Directly put them in their respective state values
         })
-        console.log(this.state.selectedListingData.type)
     }
     
     createListing = async () => {
@@ -100,26 +99,24 @@ export default class Update extends React.Component {
     render() {
         return (
             <React.Fragment>
-                {this.updateState()}
                 <div className="contribute-form">
-
                     <Form.Group className="p-3">
                         <Form.Label>Type</Form.Label>
                         <Form.Group className="mb-1 p-2" controlId="formBasicCheckbox">
-                            <Form.Check type="radio" label="Attraction" name="type" value="Attraction" checked={this.state.type === "Attraction"} onChange={this.updateFormField} />
+                            <Form.Check type="radio" label="Attraction" name="type" value="Attraction" checked={this.state.selectedListingData.type === "Attraction"} onChange={this.updateFormField} />
                         </Form.Group>
                         <Form.Group className="mb-1 p-2" controlId="formBasicCheckbox">
-                            <Form.Check type="radio" label="Food" name="type" value="Food" checked={this.state.type === "Food"} onChange={this.updateFormField} />
+                            <Form.Check type="radio" label="Food" name="type" value="Food" checked={this.state.selectedListingData.type === "Food"} onChange={this.updateFormField} />
                         </Form.Group>
                         <Form.Group className="mb-1 p-2" controlId="formBasicCheckbox">
-                            <Form.Check type="radio" label="Activity" name="type" value="Activity" checked={this.state.type === "Activity"} onChange={this.updateFormField} />
+                            <Form.Check type="radio" label="Activity" name="type" value="Activity" checked={this.state.selectedListingData.type === "Activity"} onChange={this.updateFormField} />
                         </Form.Group>
                     </Form.Group>
 
 
                     <Form.Group className="mb-3 p-3" controlId="formPlaceName">
                         <Form.Label>Enter the name of attraction</Form.Label>
-                        <Form.Control type="text" placeholder="Place Name" name="name" value={this.state.name} onChange={this.updateFormField} />
+                        <Form.Control type="text" placeholder={this.state.selectedListingData.name} name="name" value={this.state.name} onChange={this.updateFormField} />
                     </Form.Group>
 
                     <Form.Group className="mb-3 p-3" controlId="formAuthorName">
