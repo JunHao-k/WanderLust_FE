@@ -93,7 +93,12 @@ export default class Main extends React.Component {
       return(
         <React.Fragment>
           <NavBar setActive={this.setActive}/>
-          <Update selectedListingId = {this.state.selectedListingId}/>
+          <Update 
+            selectedListingId = {this.state.selectedListingId}
+            setActive={this.setActive} 
+            updateQuery = {this.updateQuery}
+            updatePlace = {this.updatePlace}
+            />
         </React.Fragment>
       )
     }

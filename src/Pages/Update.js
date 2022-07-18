@@ -71,7 +71,7 @@ export default class Update extends React.Component {
     
     
     updateListing = async () => {
-        let res = await axios.post(this.url + "contribute" , {
+        let res = await axios.put(this.url + "listings/" + this.state.targetId , {
             "type": this.state.type,
             "name": this.state.name,
             "author": this.state.author,
@@ -114,13 +114,6 @@ export default class Update extends React.Component {
             tags_id: tags_copy
         })
     }
-
-    updateState(){
-        this.setState({
-            type: this.state.selectedListingData.type
-        })
-    }
-    
 
     render() {
         return (
@@ -248,7 +241,7 @@ export default class Update extends React.Component {
                     <Button variant="custom bg-warning mb-3" id = "contributeBtn" onClick={async () => {
                             // Have to do await here to make sure database update this newest listing before redirecting to
                             // show the most updated listing
-                            await this.createListing();  
+                            await this.updateListing();  
                             this.props.setActive('listing');
                             this.props.updateQuery("city");
                             this.props.updatePlace(this.state.city)
