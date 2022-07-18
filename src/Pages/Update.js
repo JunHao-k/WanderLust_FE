@@ -32,19 +32,45 @@ export default class Update extends React.Component {
         image_url: ""
     }
 
-    url = "https://8888-junhaok-wanderlustbe-ultao66f8gr.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-a7ripchz1la.ws-us54.gitpod.io/"
     async componentDidMount() {
         let response1 = await axios.get(this.url + "countries")
         let response2 = await axios.get(this.url + "tags")
         let response3 = await axios.get(this.url + "listings/" + this.state.targetId)
+        let response4 = await axios.get(this.url + "cities")
+        let cityName = this.extractCity(response3.data.city , response4.data)
         this.setState({
             countryData: response1.data,
+            cityData: response4.data,
             tagsData: response2.data,
-            selectedListingData: response3.data // Directly put them in their respective state values
+            selectedListingData: response3.data,  // Directly put them in their respective state values
+            
+            type: response3.data.type,
+            name: response3.data.name,
+            author: response3.data.author,
+            description1: response3.data.description[0],
+            description2: response3.data.description[1],
+            description3: response3.data.description[2],
+            city: cityName,
+            email: response3.data.email,
+            article: response3.data.article,
+            price: response3.data.price,
+            tags_id: response3.data.tags_id,
+            image_url: response3.data.images
         })
     }
+
+    extractCity = (cityId , cityData) => {
+        for(let c of cityData){
+            if(c._id === cityId){
+                return c.city
+            }
+        }
+    }
+
     
-    createListing = async () => {
+    
+    updateListing = async () => {
         let res = await axios.post(this.url + "contribute" , {
             "type": this.state.type,
             "name": this.state.name,
@@ -103,20 +129,20 @@ export default class Update extends React.Component {
                     <Form.Group className="p-3">
                         <Form.Label>Type</Form.Label>
                         <Form.Group className="mb-1 p-2" controlId="formBasicCheckbox">
-                            <Form.Check type="radio" label="Attraction" name="type" value="Attraction" checked={this.state.selectedListingData.type === "Attraction"} onChange={this.updateFormField} />
+                            <Form.Check type="radio" label="Attraction" name="type" value="Attraction" checked={this.state.type === "Attraction"} onChange={this.updateFormField} />
                         </Form.Group>
                         <Form.Group className="mb-1 p-2" controlId="formBasicCheckbox">
-                            <Form.Check type="radio" label="Food" name="type" value="Food" checked={this.state.selectedListingData.type === "Food"} onChange={this.updateFormField} />
+                            <Form.Check type="radio" label="Food" name="type" value="Food" checked={this.state.type === "Food"} onChange={this.updateFormField} />
                         </Form.Group>
                         <Form.Group className="mb-1 p-2" controlId="formBasicCheckbox">
-                            <Form.Check type="radio" label="Activity" name="type" value="Activity" checked={this.state.selectedListingData.type === "Activity"} onChange={this.updateFormField} />
+                            <Form.Check type="radio" label="Activity" name="type" value="Activity" checked={this.state.type === "Activity"} onChange={this.updateFormField} />
                         </Form.Group>
                     </Form.Group>
 
 
                     <Form.Group className="mb-3 p-3" controlId="formPlaceName">
                         <Form.Label>Enter the name of attraction</Form.Label>
-                        <Form.Control type="text" placeholder={this.state.selectedListingData.name} name="name" value={this.state.name} onChange={this.updateFormField} />
+                        <Form.Control type="text" placeholder="Place Name" name="name" value={this.state.name} onChange={this.updateFormField} />
                     </Form.Group>
 
                     <Form.Group className="mb-3 p-3" controlId="formAuthorName">
@@ -228,7 +254,7 @@ export default class Update extends React.Component {
                             this.props.updatePlace(this.state.city)
                             
                         }}>
-                        Share 
+                        Edit 
                     </Button>
                 </div>
             </React.Fragment>

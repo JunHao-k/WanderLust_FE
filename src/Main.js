@@ -29,7 +29,6 @@ export default class Main extends React.Component {
   }
 
   selectListing = (listingId) => {
-    alert("Function ran")
     this.setState({
       selectedListingId: listingId
     })

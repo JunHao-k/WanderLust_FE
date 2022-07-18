@@ -10,7 +10,7 @@ import '../css/Submission.css'
 
 export default class Submission extends React.Component{
 
-    url = "https://8888-junhaok-wanderlustbe-ultao66f8gr.ws-us54.gitpod.io/get-submissions"
+    url = "https://8888-junhaok-wanderlustbe-a7ripchz1la.ws-us54.gitpod.io/get-submissions"
 
     state = {
         email: "",
@@ -58,7 +58,7 @@ export default class Submission extends React.Component{
                                                 await this.props.selectListing(this.state.mySubmission[idx]._id)
                                                 this.props.setActive('update')
                                             }}>
-                                                Update
+                                                Edit
                                             </Button>
                                             <Button variant="custom bg-warning mb-3 udBtn">
                                                 Delete
