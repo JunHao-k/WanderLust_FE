@@ -15,6 +15,9 @@
 
 .modal-footer{
     background-color: #fff2dd;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .modal-body{

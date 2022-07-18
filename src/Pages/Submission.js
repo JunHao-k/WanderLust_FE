@@ -12,6 +12,7 @@ import '../css/Submission.css'
 export default class Submission extends React.Component {
 
     url = "https://8888-junhaok-wanderlustbe-a7ripchz1la.ws-us54.gitpod.io/get-submissions"
+    deleteURL = "https://8888-junhaok-wanderlustbe-a7ripchz1la.ws-us54.gitpod.io/listings/"
 
     state = {
         email: "",
@@ -58,6 +59,11 @@ export default class Submission extends React.Component {
             deleteCountry: country,
             deleteCity: city
         })
+    }
+
+    deleteListing = async () => {
+        let res = await axios.delete(this.deleteURL + this.state.deleteId)
+        console.log(res)
     }
 
     renderContent() {
@@ -110,10 +116,13 @@ export default class Submission extends React.Component {
                                                     {this.state.deleteCity} , {this.state.deleteCountry}
                                                 </Modal.Body>
                                                 <Modal.Footer>
-                                                    <Button variant="custom bg-warning mb-3" onClick={this.handleClose}>
-                                                        Close
+                                                    <Button variant="warning" onClick = {() => {
+                                                        this.deleteListing();
+                                                        this.props.setActive('home')
+                                                    }}>Yes</Button>
+                                                    <Button variant="warning" onClick={this.handleClose}>
+                                                        No
                                                     </Button>
-                                                    <Button variant="custom bg-warning mb-3">Understood</Button>
                                                 </Modal.Footer>
                                             </Modal>
                                         </Card.Body>
