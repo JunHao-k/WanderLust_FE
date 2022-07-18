@@ -242,7 +242,7 @@ export default class Update extends React.Component {
                             // Have to do await here to make sure database update this newest listing before redirecting to
                             // show the most updated listing
                             await this.updateListing();  
-                            this.props.setActive('listing');
+                            this.props.setActive('submission');
                             this.props.updateQuery("city");
                             this.props.updatePlace(this.state.city)
                             
