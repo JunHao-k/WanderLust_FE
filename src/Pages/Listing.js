@@ -2,33 +2,50 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Modal from 'react-bootstrap/Modal';
+// import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import '../css/Listing.css'
 import axios from 'axios';
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-psu2ribgc6l.ws-us54.gitpod.io/listings"
+    url = "https://8888-junhaok-wanderlustbe-kzu1yhofn5f.ws-us54.gitpod.io/listings"
 
     state = {
         data: [],
         query: this.props.query,
         place: this.props.place,
-        filterPrice: false,
+        filter: "",
         filterTags: false,
         haveData: false
     }
     async componentDidMount() {
 
-        if(filterPrice === true){
+        let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
+        // console.log(response.data)
+        this.setState({
+            data: response.data,
+            haveData: true
+        })
+
+    }
+
+    updateFilter = async (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    refineSearch = async () => {
+        if (this.state.filter === "free-listing") {
             let response = await axios.get(this.url + "/free" + `?${this.state.query}=${this.state.place}`)
             this.setState({
                 data: response.data,
                 haveData: true
             })
         }
-        else{
+        else {
             let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
             // console.log(response.data)
             this.setState({
@@ -36,9 +53,16 @@ export default class Listing extends React.Component {
                 haveData: true
             })
         }
+    }
 
-        
-        
+    resetFilter = async () => {
+        let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
+        // console.log(response.data)
+        this.setState({
+            data: response.data,
+            haveData: true,
+            filter: ""
+        })
     }
 
     renderContent = () => {
@@ -72,14 +96,14 @@ export default class Listing extends React.Component {
                 </div>
             )
         }
-        else{
+        else {
             // console.log(this.state.data)
-            return(
+            return (
                 <div>
                     <h1>No results found</h1>
                 </div>
             )
-            
+
             // <Modal className="delete-modal" show={this.state.show} onHide={this.handleClose} backdrop="static" keyboard={false}>
             //     <Modal.Header closeButton>
             //         <Modal.Title>Delete {this.state.deleteName}?</Modal.Title>
@@ -105,8 +129,27 @@ export default class Listing extends React.Component {
     // Text also limit height
     render() {
         return (
-            <React.Fragment>{this.state.haveData ? this.renderContent() : ""}</React.Fragment>  
+
+            <React.Fragment>
+                <Form.Group className="mb-3 p-3">
+                    <Form.Label>-- Filter By --</Form.Label>
+                    <Form.Select aria-label="Default select example" name="filter" onChange={this.updateFilter}>
+                        <option value=""> Default </option>
+                        <option value="free-listing"> Listings that are free </option>
+                        {/* {Array.from({ length: 11 }).map((_, idx) => (
+                            <option value={idx}>
+                                {idx}
+                            </option>
+                        ))} */}
+                    </Form.Select>
+                    <Button variant="warning" onClick={this.refineSearch}> Refine Search </Button>
+                    <Button variant="warning" onClick={this.resetFilter}> Get Default </Button>
+
+                </Form.Group>
+                {this.state.haveData ? this.renderContent() : ""}
+            </React.Fragment>
         )
 
     }
 }
+

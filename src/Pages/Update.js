@@ -32,7 +32,7 @@ export default class Update extends React.Component {
         image_url: ""
     }
 
-    url = "https://8888-junhaok-wanderlustbe-8gy03i5t39q.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-kzu1yhofn5f.ws-us54.gitpod.io/"
     async componentDidMount() {
         let response1 = await axios.get(this.url + "countries")
         let response2 = await axios.get(this.url + "tags")
