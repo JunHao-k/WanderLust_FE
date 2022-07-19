@@ -1,10 +1,14 @@
-.landing-body{
+/* #main-body{
     height: 100vh;
     background-image: url(./travel.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; 
-}
+} */
+
+/* body{
+    background-color: black;
+} */
 
 .search-body{
     display: flex;
