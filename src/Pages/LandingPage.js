@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 
 export default class LandingPage extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-8gy03i5t39q.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-psu2ribgc6l.ws-us54.gitpod.io/"
 
     state = {
         show: true,

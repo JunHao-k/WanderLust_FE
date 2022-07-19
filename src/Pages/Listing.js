@@ -9,24 +9,27 @@ import axios from 'axios';
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-8gy03i5t39q.ws-us54.gitpod.io/listings"
+    url = "https://8888-junhaok-wanderlustbe-psu2ribgc6l.ws-us54.gitpod.io/listings"
 
     state = {
         data: [],
         query: this.props.query,
         place: this.props.place,
+        haveData: false
     }
     async componentDidMount() {
 
         let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
+        // console.log(response.data)
         this.setState({
-            data: response.data
+            data: response.data,
+            haveData: true
         })
-        // console.log(this.state.data)
+        
     }
 
-    renderContent() {
-        if (this.state.data !== 0) {
+    renderContent = () => {
+        if (this.state.data.length !== 0) {
             return (
                 <div >
                     <Row xs={1} md={2} lg={3} className="g-4 container-fluid" >
@@ -56,25 +59,32 @@ export default class Listing extends React.Component {
                 </div>
             )
         }
-        else {
-            <Modal className="delete-modal" show={this.state.show} onHide={this.handleClose} backdrop="static" keyboard={false}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Delete {this.state.deleteName}?</Modal.Title>
-                </Modal.Header>
-                <Modal.Body >
-                    Are you sure you want to delete this listing about {this.state.deleteName} located in
-                    {this.state.deleteCity} , {this.state.deleteCountry}
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="warning" onClick={() => {
-                        this.deleteListing();
-                        this.props.setActive('home')
-                    }}>Yes</Button>
-                    <Button variant="warning" onClick={this.handleClose}>
-                        No
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+        else{
+            // console.log(this.state.data)
+            return(
+                <div>
+                    <h1>No results found</h1>
+                </div>
+            )
+            
+            // <Modal className="delete-modal" show={this.state.show} onHide={this.handleClose} backdrop="static" keyboard={false}>
+            //     <Modal.Header closeButton>
+            //         <Modal.Title>Delete {this.state.deleteName}?</Modal.Title>
+            //     </Modal.Header>
+            //     <Modal.Body >
+            //         Are you sure you want to delete this listing about {this.state.deleteName} located in
+            //         {this.state.deleteCity} , {this.state.deleteCountry}
+            //     </Modal.Body>
+            //     <Modal.Footer>
+            //         <Button variant="warning" onClick={() => {
+            //             this.deleteListing();
+            //             this.props.setActive('home')
+            //         }}>Yes</Button>
+            //         <Button variant="warning" onClick={this.handleClose}>
+            //             No
+            //         </Button>
+            //     </Modal.Footer>
+            // </Modal>
         }
     }
 
@@ -82,7 +92,7 @@ export default class Listing extends React.Component {
     // Text also limit height
     render() {
         return (
-            this.renderContent()
+            <React.Fragment>{this.state.haveData ? this.renderContent() : ""}</React.Fragment>  
         )
 
     }
