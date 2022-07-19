@@ -15,16 +15,29 @@ export default class Listing extends React.Component {
         data: [],
         query: this.props.query,
         place: this.props.place,
+        filterPrice: false,
+        filterTags: false,
         haveData: false
     }
     async componentDidMount() {
 
-        let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
-        // console.log(response.data)
-        this.setState({
-            data: response.data,
-            haveData: true
-        })
+        if(filterPrice === true){
+            let response = await axios.get(this.url + "/free" + `?${this.state.query}=${this.state.place}`)
+            this.setState({
+                data: response.data,
+                haveData: true
+            })
+        }
+        else{
+            let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
+            // console.log(response.data)
+            this.setState({
+                data: response.data,
+                haveData: true
+            })
+        }
+
+        
         
     }
 
