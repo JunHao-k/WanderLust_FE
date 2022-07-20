@@ -10,34 +10,20 @@ import axios from 'axios';
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-kzu1yhofn5f.ws-us54.gitpod.io/listings"
+    url = "https://8888-junhaok-wanderlustbe-6ftlc0pd65j.ws-us54.gitpod.io/listings"
+    resUrl = "https://8888-junhaok-wanderlustbe-6ftlc0pd65j.ws-us54.gitpod.io/"
 
     state = {
         data: [],
+        tagsData: [],
         query: this.props.query,
         place: this.props.place,
-        filter: "",
-        filterTags: false,
+        filter: this.props.filter,
+        selectedTag: "",
         haveData: false
     }
     async componentDidMount() {
 
-        let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
-        // console.log(response.data)
-        this.setState({
-            data: response.data,
-            haveData: true
-        })
-
-    }
-
-    updateFilter = async (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-
-    refineSearch = async () => {
         if (this.state.filter === "free-listing") {
             let response = await axios.get(this.url + "/free" + `?${this.state.query}=${this.state.place}`)
             this.setState({
@@ -45,25 +31,60 @@ export default class Listing extends React.Component {
                 haveData: true
             })
         }
-        else {
+        else if(this.state.filter === "tags"){
+            let tagsResponse = await axios.get(this.resUrl + "tags")
+            let response = await axios.get(this.url + "/tags" + `/${this.state.filter}?${this.state.query}=${this.state.place}`)
+            this.setState({
+                tagsData: tagsResponse.data,
+                data: response.data,
+                haveData: true
+            })
+        }
+        else{
             let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
-            // console.log(response.data)
             this.setState({
                 data: response.data,
                 haveData: true
             })
         }
+
+        
+
     }
 
-    resetFilter = async () => {
-        let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
-        // console.log(response.data)
-        this.setState({
-            data: response.data,
-            haveData: true,
-            filter: ""
-        })
-    }
+    // updateFilter = async (event) => {
+    //     this.setState({
+    //         [event.target.name]: event.target.value
+    //     })
+    // }
+
+    // refineSearch = async () => {
+    //     if (this.state.filter === "free-listing") {
+    //         let response = await axios.get(this.url + "/free" + `?${this.state.query}=${this.state.place}`)
+    //         this.setState({
+    //             data: response.data,
+    //             haveData: true
+    //         })
+    //     }
+    //     else {
+    //         let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
+    //         // console.log(response.data)
+    //         this.setState({
+    //             data: response.data,
+    //             haveData: true
+    //         })
+    //     }
+    // }
+
+    // resetFilter = async () => {
+    //     let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
+    //     // console.log(response.data)
+    //     this.setState({
+    //         data: response.data,
+    //         haveData: true,
+    //         filter: ""
+    //     })
+    // }
 
     renderContent = () => {
         if (this.state.data.length !== 0) {
@@ -131,21 +152,6 @@ export default class Listing extends React.Component {
         return (
 
             <React.Fragment>
-                <Form.Group className="mb-3 p-3">
-                    <Form.Label>-- Filter By --</Form.Label>
-                    <Form.Select aria-label="Default select example" name="filter" onChange={this.updateFilter}>
-                        <option value=""> Default </option>
-                        <option value="free-listing"> Listings that are free </option>
-                        {/* {Array.from({ length: 11 }).map((_, idx) => (
-                            <option value={idx}>
-                                {idx}
-                            </option>
-                        ))} */}
-                    </Form.Select>
-                    <Button variant="warning" onClick={this.refineSearch}> Refine Search </Button>
-                    <Button variant="warning" onClick={this.resetFilter}> Get Default </Button>
-
-                </Form.Group>
                 {this.state.haveData ? this.renderContent() : ""}
             </React.Fragment>
         )

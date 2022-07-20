@@ -14,7 +14,8 @@ export default class Main extends React.Component {
     active: "home",
     searchBy: "",
     place: "",
-    selectedListingId: ""
+    selectedListingId: "",
+    filter: ""
   };
 
   updatePlace = (value) => {
@@ -41,6 +42,12 @@ export default class Main extends React.Component {
     });
   }
 
+  updateFilter = (filter) => {
+    this.setState({
+      filter: filter
+    })
+  }
+
   renderContent() {
     if (this.state.active === "listing") {
       return (
@@ -51,6 +58,7 @@ export default class Main extends React.Component {
             <Listing
               query={this.state.searchBy}
               place={this.state.place}
+              filter={this.state.filter}
             />
           </React.Fragment>
         </div >
@@ -77,9 +85,11 @@ export default class Main extends React.Component {
           <LandingPage
             setActive={this.setActive}
             updateQuery={this.updateQuery}
-            searchLocation={this.state.searchBy}
+            searchLocation={this.state.searchBy} // This is to facilitate 2-way binding between 2 pages
             updatePlace={this.updatePlace}
-            place={this.state.place}
+            place={this.state.place} // This is to facilitate 2-way binding between 2 pages
+            updateFilter = {this.updateFilter}
+            /* filter={this.state.filter} */// This is to facilitate 2-way binding between 2 pages
           />
         </React.Fragment>
       )
