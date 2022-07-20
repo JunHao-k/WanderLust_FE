@@ -1,12 +1,18 @@
 .contribute-form{
-    margin-top: 30px;
+    /* margin-top: 10px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+.separator{
+    height:5px;
+}
+
+
 .btn-custom {
     width: 226px;
+    color: black
     /* margin-left: 70px; */
 }
 

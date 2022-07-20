@@ -15,7 +15,8 @@ export default class Main extends React.Component {
     searchBy: "",
     place: "",
     selectedListingId: "",
-    filter: ""
+    filter: false,
+    filterId: ""
   };
 
   updatePlace = (value) => {
@@ -42,10 +43,24 @@ export default class Main extends React.Component {
     });
   }
 
-  updateFilter = (filter) => {
+  updateFilterId = (filterId) => {
     this.setState({
-      filter: filter
+      filterId: filterId
     })
+  }
+
+  toggleFilter = () => {
+    if(this.state.filterId){
+      this.setState({
+        filter: true
+      })
+    }
+    else{
+      this.setState({
+        filter: false
+      })
+    }
+    
   }
 
   renderContent() {
@@ -58,6 +73,7 @@ export default class Main extends React.Component {
             <Listing
               query={this.state.searchBy}
               place={this.state.place}
+              filterId={this.state.filterId}
               filter={this.state.filter}
             />
           </React.Fragment>
@@ -88,7 +104,8 @@ export default class Main extends React.Component {
             searchLocation={this.state.searchBy} // This is to facilitate 2-way binding between 2 pages
             updatePlace={this.updatePlace}
             place={this.state.place} // This is to facilitate 2-way binding between 2 pages
-            updateFilter = {this.updateFilter}
+            updateFilterId = {this.updateFilterId}
+            toggleFilter = {this.toggleFilter}
             /* filter={this.state.filter} */// This is to facilitate 2-way binding between 2 pages
           />
         </React.Fragment>

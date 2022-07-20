@@ -3,15 +3,15 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 // import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
 import '../css/Listing.css'
 import axios from 'axios';
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-6ftlc0pd65j.ws-us54.gitpod.io/listings"
-    resUrl = "https://8888-junhaok-wanderlustbe-6ftlc0pd65j.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-vi5c33k1epi.ws-us54.gitpod.io/listings"
+    resUrl = "https://8888-junhaok-wanderlustbe-vi5c33k1epi.ws-us54.gitpod.io/"
 
     state = {
         data: [],
@@ -19,24 +19,25 @@ export default class Listing extends React.Component {
         query: this.props.query,
         place: this.props.place,
         filter: this.props.filter,
-        selectedTag: "",
+        filterId: this.props.filterId,
+        // selectedTag: "",
         haveData: false
     }
     async componentDidMount() {
-
         if (this.state.filter === "free-listing") {
-            let response = await axios.get(this.url + "/free" + `?${this.state.query}=${this.state.place}`)
+            let response = await axios.get(this.url + `/free?${this.state.query}=${this.state.place}`)
             this.setState({
                 data: response.data,
                 haveData: true
             })
         }
-        else if(this.state.filter === "tags"){
+        else if(this.state.filter === true){
             let tagsResponse = await axios.get(this.resUrl + "tags")
-            let response = await axios.get(this.url + "/tags" + `/${this.state.filter}?${this.state.query}=${this.state.place}`)
+            let response = await axios.get(this.url + `/tags/${this.state.filterId}?${this.state.query}=${this.state.place}`)
             this.setState({
                 tagsData: tagsResponse.data,
                 data: response.data,
+                filter: false,
                 haveData: true
             })
         }

@@ -1,10 +1,11 @@
-/* #main-body{
+.landing-body{
+    position: relative;
     height: 100vh;
     background-image: url(./travel.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-} */
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;  */
+}
 
 /* body{
     background-color: black;
@@ -15,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 40vh;
+    /* margin-top: 40vh; */
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -31,6 +32,8 @@
 }
 
 .overlay{
+    position: absolute;
+    margin-top: 40vh;
     height: 190px;
     background-color: grey;
     width: 300px;

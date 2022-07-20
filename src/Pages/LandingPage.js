@@ -9,11 +9,11 @@ import axios from "axios";
 
 export default class LandingPage extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-6ftlc0pd65j.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-vi5c33k1epi.ws-us54.gitpod.io/"
 
     state = {
         show: true,
-        filter: "",
+        //filter: "",
         tagsData: []
     }
 
@@ -24,11 +24,11 @@ export default class LandingPage extends React.Component {
         })
     }
     
-    changeFilter = (event) => {
-        this.setState({
-            filter: event.target.value
-        })
-    }
+    // changeFilter = (event) => {
+    //     this.setState({
+    //         filter: event.target.value
+    //     })
+    // }
 
     render() {
         return (
@@ -48,7 +48,10 @@ export default class LandingPage extends React.Component {
                                 </Form.Group>
                             </div>
                             <Form.Group className="mb-3 p-3">
-                                <Form.Select aria-label="Default select example" name="filter" onChange={(event) => {this.props.updateFilter(event.target.value)}}>
+                                <Form.Select aria-label="Default select example" name="filter" onChange={(event) => {
+                                        this.props.updateFilterId(event.target.value)
+                                        //this.props.updateFilter(this.state.filter)
+                                    }}>
                                     <option value=""> -- Filter By -- </option>
                                     <option value="free-listing"> Listings that are free </option>
                                     {Array.from({ length: this.state.tagsData.length }).map((_, idx) => (
@@ -60,8 +63,8 @@ export default class LandingPage extends React.Component {
                             </Form.Group>
 
                             <Button variant="custom bg-warning" onClick={() => {
-                                    this.props.setActive('listing')
-                                    // this.props.updateFilter(this.state.filter)
+                                    this.props.setActive('listing') 
+                                    this.props.toggleFilter()
                                 }}>
                                 Search
                             </Button>
