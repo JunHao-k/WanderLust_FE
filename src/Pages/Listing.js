@@ -10,8 +10,8 @@ import axios from 'axios';
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-vi5c33k1epi.ws-us54.gitpod.io/listings"
-    resUrl = "https://8888-junhaok-wanderlustbe-vi5c33k1epi.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-19jlt16pdei.ws-us54.gitpod.io/listings"
+    resUrl = "https://8888-junhaok-wanderlustbe-19jlt16pdei.ws-us54.gitpod.io/"
 
     state = {
         data: [],
@@ -19,7 +19,6 @@ export default class Listing extends React.Component {
         query: this.props.query,
         place: this.props.place,
         filter: this.props.filter,
-        filterId: this.props.filterId,
         // selectedTag: "",
         haveData: false
     }
@@ -31,9 +30,23 @@ export default class Listing extends React.Component {
                 haveData: true
             })
         }
-        else if(this.state.filter === true){
+        else if(this.state.filter === ""){
+            let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
+            this.setState({
+                data: response.data,
+                haveData: true
+            })
+        }
+        else if(this.state.filter === "best-rated"){
+            let response = await axios.get(this.url + `/stars?${this.state.query}=${this.state.place}`)
+            this.setState({
+                data: response.data,
+                haveData: true
+            })
+        }
+        else{
             let tagsResponse = await axios.get(this.resUrl + "tags")
-            let response = await axios.get(this.url + `/tags/${this.state.filterId}?${this.state.query}=${this.state.place}`)
+            let response = await axios.get(this.url + `/tags/${this.state.filter}?${this.state.query}=${this.state.place}`)
             this.setState({
                 tagsData: tagsResponse.data,
                 data: response.data,
@@ -41,14 +54,7 @@ export default class Listing extends React.Component {
                 haveData: true
             })
         }
-        else{
-            let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
-            this.setState({
-                data: response.data,
-                haveData: true
-            })
-        }
-
+        
         
 
     }

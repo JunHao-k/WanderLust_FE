@@ -15,8 +15,8 @@ export default class Main extends React.Component {
     searchBy: "",
     place: "",
     selectedListingId: "",
-    filter: false,
-    filterId: ""
+    filter: "",
+    // filterId: ""
   };
 
   updatePlace = (value) => {
@@ -43,43 +43,37 @@ export default class Main extends React.Component {
     });
   }
 
-  updateFilterId = (filterId) => {
+  updateFilter = (filter) => {
     this.setState({
-      filterId: filterId
+      filter: filter
     })
   }
 
-  toggleFilter = () => {
-    if(this.state.filterId){
-      this.setState({
-        filter: true
-      })
-    }
-    else{
-      this.setState({
-        filter: false
-      })
-    }
+  // toggleFilter = () => {
+  //   if(this.state.filterId){
+  //     this.setState({
+  //       filter: true
+  //     })
+  //   }
+  //   else{
+  //     this.setState({
+  //       filter: false
+  //     })
+  //   }
     
-  }
+  // }
 
   renderContent() {
     if (this.state.active === "listing") {
       return (
-
-        <div id = "main-body">
           <React.Fragment>
             <NavBar setActive={this.setActive} />
             <Listing
               query={this.state.searchBy}
               place={this.state.place}
-              filterId={this.state.filterId}
               filter={this.state.filter}
             />
           </React.Fragment>
-        </div >
-
-
       );
     }
     else if (this.state.active === "contribute") {
@@ -104,8 +98,8 @@ export default class Main extends React.Component {
             searchLocation={this.state.searchBy} // This is to facilitate 2-way binding between 2 pages
             updatePlace={this.updatePlace}
             place={this.state.place} // This is to facilitate 2-way binding between 2 pages
-            updateFilterId = {this.updateFilterId}
-            toggleFilter = {this.toggleFilter}
+            updateFilter = {this.updateFilter}
+            // toggleFilter = {this.toggleFilter}
             /* filter={this.state.filter} */// This is to facilitate 2-way binding between 2 pages
           />
         </React.Fragment>

@@ -9,7 +9,7 @@ import axios from "axios";
 
 export default class LandingPage extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-vi5c33k1epi.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-19jlt16pdei.ws-us54.gitpod.io/"
 
     state = {
         show: true,
@@ -49,11 +49,12 @@ export default class LandingPage extends React.Component {
                             </div>
                             <Form.Group className="mb-3 p-3">
                                 <Form.Select aria-label="Default select example" name="filter" onChange={(event) => {
-                                        this.props.updateFilterId(event.target.value)
+                                        this.props.updateFilter(event.target.value)
                                         //this.props.updateFilter(this.state.filter)
                                     }}>
-                                    <option value=""> -- Filter By -- </option>
-                                    <option value="free-listing"> Listings that are free </option>
+                                    <option value = ""> -- Filter By -- </option>
+                                    <option value = "free-listing"> Free attractions </option>
+                                    <option value = "best-rated"> Best rated </option>
                                     {Array.from({ length: this.state.tagsData.length }).map((_, idx) => (
                                         <option value = {this.state.tagsData[idx]._id}>
                                             {this.state.tagsData[idx].tag_name}
@@ -64,7 +65,7 @@ export default class LandingPage extends React.Component {
 
                             <Button variant="custom bg-warning" onClick={() => {
                                     this.props.setActive('listing') 
-                                    this.props.toggleFilter()
+                                    // this.props.toggleFilter()
                                 }}>
                                 Search
                             </Button>
