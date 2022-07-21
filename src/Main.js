@@ -49,6 +49,14 @@ export default class Main extends React.Component {
     })
   }
 
+  clearFilter = () => {
+    this.setState({
+      filter: "",
+      searchBy: "",
+      place: ""
+    })
+  }
+
   // toggleFilter = () => {
   //   if(this.state.filterId){
   //     this.setState({
@@ -67,7 +75,7 @@ export default class Main extends React.Component {
     if (this.state.active === "listing") {
       return (
           <React.Fragment>
-            <NavBar setActive={this.setActive} />
+            <NavBar setActive={this.setActive} clearFilter = {this.clearFilter}/>
             <Listing
               query={this.state.searchBy}
               place={this.state.place}

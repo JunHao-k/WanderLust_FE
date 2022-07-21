@@ -20,7 +20,12 @@ export default class NavBar extends React.Component {
                     <div className={this.state.show ? "collapse navbar-collapse" : "collapse navbar-collapse active"} >
                         <ul className="navbar-nav  ms-auto">
                             <li className="nav-item">
-                                <a className="nav-link text-light" onClick={() => this.props.setActive('home')}>HOME</a>
+                                <a className="nav-link text-light" onClick={() => {
+                                    this.props.setActive('home')
+                                    this.props.clearFilter()
+                                    }}>
+                                        HOME
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link text-light" onClick={() => this.props.setActive('contribute')}>CONTRIBUTE</a>

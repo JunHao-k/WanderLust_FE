@@ -1,4 +1,4 @@
-import React, { isValidElement } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Landing.css"
 import Button from 'react-bootstrap/Button';
@@ -23,16 +23,21 @@ export default class LandingPage extends React.Component {
     }
 
     async componentDidMount() {
+
         let tagsResponse = await axios.get(this.url + "tags")
         this.setState({
-            tagsData: tagsResponse.data
+            tagsData: tagsResponse.data,
+            noError: true,
+            search: this.props.place,
+            radioGroup: this.props.searchLocation
+            
         })
 
     }
 
-    updateSearch = (event) => {
+    updateSearch = (location) => {
         this.setState({
-            search: event.target.value
+            search: location
         })
     }
     updateRadio = (type) => {
@@ -76,7 +81,8 @@ export default class LandingPage extends React.Component {
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Control type="text" placeholder="Search country or city" name="search" value={this.props.place} onChange={(event) => {
                                     this.props.updatePlace(event.target.value)
-                                    this.updateSearch(event)
+                                    this.updateSearch(this.props.place)
+                                    // this.updateSearch(event)
                                 }} />
                             </Form.Group>
                             <div className="location-checkbox">
