@@ -40,3 +40,7 @@
     margin-left: 40px;
     /* border: 1px solid black; */
 }
+
+.error-msg{
+    height: 1000px;
+}
