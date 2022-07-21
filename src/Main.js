@@ -5,6 +5,7 @@ import LandingPage from "./Pages/LandingPage";
 import Submission from "./Pages/Submission";
 import Update from "./Pages/Update";
 import NavBar from "./Components/NavBar";
+import ListingDetails from "./Pages/ListingDetails";
 
 
 
@@ -16,6 +17,7 @@ export default class Main extends React.Component {
     place: "",
     selectedListingId: "",
     filter: "",
+    showListing: ""
     // filterId: ""
   };
 
@@ -53,9 +55,17 @@ export default class Main extends React.Component {
     this.setState({
       filter: "",
       searchBy: "",
+      selectedListingId: "",
       place: ""
     })
   }
+
+  setListingId = (showListingId) => {
+    this.setState({
+      showListing: showListingId
+    })
+  }
+  
 
   // toggleFilter = () => {
   //   if(this.state.filterId){
@@ -80,6 +90,8 @@ export default class Main extends React.Component {
               query={this.state.searchBy}
               place={this.state.place}
               filter={this.state.filter}
+              setListingId = {this.setListingId}
+              setActive={this.setActive}
             />
           </React.Fragment>
       );
@@ -87,7 +99,7 @@ export default class Main extends React.Component {
     else if (this.state.active === "contribute") {
       return (
         <React.Fragment>
-          <NavBar setActive={this.setActive} />
+          <NavBar setActive={this.setActive} clearFilter = {this.clearFilter}/>
           <Contribute
             setActive={this.setActive}
             updateQuery={this.updateQuery}
@@ -99,7 +111,7 @@ export default class Main extends React.Component {
     else if (this.state.active === "home") {
       return (
         <React.Fragment>
-          <NavBar setActive={this.setActive} />
+          <NavBar setActive={this.setActive} clearFilter = {this.clearFilter}/>
           <LandingPage
             setActive={this.setActive}
             updateQuery={this.updateQuery}
@@ -116,7 +128,7 @@ export default class Main extends React.Component {
     else if (this.state.active === "submission") {
       return (
         <React.Fragment>
-          <NavBar setActive={this.setActive} />
+          <NavBar setActive={this.setActive} clearFilter = {this.clearFilter}/>
           <Submission
             setActive={this.setActive}
             selectListing={this.selectListing}
@@ -127,7 +139,7 @@ export default class Main extends React.Component {
     else if (this.state.active === "update") {
       return (
         <React.Fragment>
-          <NavBar setActive={this.setActive} />
+          <NavBar setActive={this.setActive} clearFilter = {this.clearFilter}/>
           <Update
             selectedListingId={this.state.selectedListingId}
             setActive={this.setActive}
@@ -136,6 +148,15 @@ export default class Main extends React.Component {
           />
         </React.Fragment>
       )
+    }
+    else if(this.state.active === "listing-details"){
+      return(
+        <React.Fragment>
+          <NavBar setActive={this.setActive} clearFilter = {this.clearFilter}/>
+          <ListingDetails showListing = {this.state.showListing}/>
+        </React.Fragment>
+      )
+      
     }
   }
 

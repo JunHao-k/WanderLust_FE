@@ -34,7 +34,7 @@ export default class Contribute extends React.Component {
         image_url: ""
     }
 
-    url = "https://8888-junhaok-wanderlustbe-rpgowdjn8s6.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-2ti9w1x2pyr.ws-us54.gitpod.io/"
     async componentDidMount() {
         let response1 = await axios.get(this.url + "countries")
         let response2 = await axios.get(this.url + "tags")
@@ -227,7 +227,7 @@ export default class Contribute extends React.Component {
                         <Form.Label>Price</Form.Label>
                         <Form.Control type="text" placeholder="Enter price" name="price" value={this.state.price} onChange={this.updateFormField}/>
                         <Form.Text className="text-muted">
-                            Only numbers and required field
+                            Only numbers allowed and is a required field
                             <br/>
                         </Form.Text>
                         <Form.Text className="text-muted">

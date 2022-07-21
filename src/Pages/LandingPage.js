@@ -11,7 +11,7 @@ import Modal from 'react-bootstrap/Modal';
 
 export default class LandingPage extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-rpgowdjn8s6.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-2ti9w1x2pyr.ws-us54.gitpod.io/"
 
     state = {
         show: true,

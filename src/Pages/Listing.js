@@ -10,8 +10,8 @@ import axios from 'axios';
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-rpgowdjn8s6.ws-us54.gitpod.io/listings"
-    resUrl = "https://8888-junhaok-wanderlustbe-rpgowdjn8s6.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-2ti9w1x2pyr.ws-us54.gitpod.io/listings"
+    resUrl = "https://8888-junhaok-wanderlustbe-2ti9w1x2pyr.ws-us54.gitpod.io/"
 
     state = {
         data: [],
@@ -54,44 +54,7 @@ export default class Listing extends React.Component {
                 haveData: true
             })
         }
-        
-        
-
     }
-
-    // updateFilter = async (event) => {
-    //     this.setState({
-    //         [event.target.name]: event.target.value
-    //     })
-    // }
-
-    // refineSearch = async () => {
-    //     if (this.state.filter === "free-listing") {
-    //         let response = await axios.get(this.url + "/free" + `?${this.state.query}=${this.state.place}`)
-    //         this.setState({
-    //             data: response.data,
-    //             haveData: true
-    //         })
-    //     }
-    //     else {
-    //         let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
-    //         // console.log(response.data)
-    //         this.setState({
-    //             data: response.data,
-    //             haveData: true
-    //         })
-    //     }
-    // }
-
-    // resetFilter = async () => {
-    //     let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
-    //     // console.log(response.data)
-    //     this.setState({
-    //         data: response.data,
-    //         haveData: true,
-    //         filter: ""
-    //     })
-    // }
 
     renderContent = () => {
         if (this.state.data.length !== 0) {
@@ -101,20 +64,27 @@ export default class Listing extends React.Component {
                         {Array.from({ length: this.state.data.length }).map((_, idx) => (
                             <React.Fragment key={this.state.data[idx]._id}>
                                 <Col className="card-holder">
-                                    <Card style={{ width: '18rem' }}>
+                                    <Card style={{ width: '18rem' }} onClick = {() => {
+                                            this.props.setListingId(this.state.data[idx]._id)
+                                            this.props.setActive("listing-details")
+                                        }}>
                                         <Card.Img variant="top" src={this.state.data[idx].images} />
                                         <Card.Body>
                                             <Card.Title>{this.state.data[idx].name}</Card.Title>
-                                            <Card.Title>{this.state.data[idx].type}</Card.Title>
+                                            <Card.Title>Author: {this.state.data[idx].author}</Card.Title>
+                                            <Card.Title>{this.state.data[idx].country} - {this.state.data[idx].city}</Card.Title>
+                                            <h6>Type: {this.state.data[idx].type}</h6>
                                             <ul>
+                                                <li>Price: {this.state.data[idx].price !== 0 ? this.state.data[idx].price : "Free"}</li>
+                                                <li>Rated: {this.state.data[idx].ratings}</li>
+                                                <li>Number of stars: {this.state.data[idx].stars}</li>
+                                            </ul>
+                                            {/* <ul>
                                                 <li>{this.state.data[idx].description[0]}</li>
                                                 <li>{this.state.data[idx].description[1]}</li>
                                                 <li>{this.state.data[idx].description[2]}</li>
-                                            </ul>
-                                            <Card.Text>
-                                                Some quick example text to build on the card title and make up the
-                                                bulk of the card's content.
-                                            </Card.Text>
+                                            </ul> */}
+                                            <Card.Footer className="text-muted">Click to see more details</Card.Footer>
                                         </Card.Body>
                                     </Card>
                                 </Col>
