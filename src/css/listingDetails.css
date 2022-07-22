@@ -1,0 +1,15 @@
+.listingImg{
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    border: 5px #ffbb33 solid;
+    border-radius: 10%
+}
+
+.img-container{
+    padding: 10px;
+}
+
+.listing-page{
+    height: 100vh
+}
