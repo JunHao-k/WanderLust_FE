@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lekton&display=swap');
+
 .listingImg{
     height: 50vh;
     width: 100%;
@@ -11,5 +13,49 @@
 }
 
 .listing-page{
-    height: 100vh
+    height: 100%;
+    background-color: #f2efe2;
+    margin-bottom: 10px;
 }
+
+.introduction{
+    /* font-style: italic; */
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    border-radius: 8%;
+    background-color: rgba(255, 255, 255, 0.7)
+}
+
+.description{
+    /* font-style: italic; */
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: left;
+}
+
+.description > h2{
+    font-family: "Lora", sans-serif;
+}
+
+
+.listing-title{
+    font-family: "Lora", sans-serif;
+    font-size: 35px;
+}
+
+.basic-info{
+    margin-bottom: 20px;
+}
+
+.singlePostBasic{
+    font-size: 20px;
+    color: #be9656;
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+}
+
+
