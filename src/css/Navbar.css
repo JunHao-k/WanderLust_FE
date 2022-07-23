@@ -15,9 +15,19 @@ nav .navbar-collapse.collapse{
     nav .navbar-collapse.active{
         height: 15vh !important;
     }
+    
 }
 
 nav .navbar-collapse{
     transition: .6s all ease-in-out;
     height: 0 !important;
+}
+
+
+.nav-link{
+    cursor: pointer;
+}
+
+.nav-link:hover{
+    color: #ffbb33 !important;
 }

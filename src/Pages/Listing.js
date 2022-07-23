@@ -10,8 +10,8 @@ import axios from 'axios';
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-g6l3fbr2r2f.ws-us54.gitpod.io/listings"
-    resUrl = "https://8888-junhaok-wanderlustbe-g6l3fbr2r2f.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-r0fp0plqajz.ws-us54.gitpod.io/listings"
+    resUrl = "https://8888-junhaok-wanderlustbe-r0fp0plqajz.ws-us54.gitpod.io/"
 
     state = {
         data: [],
@@ -129,6 +129,7 @@ export default class Listing extends React.Component {
         return (
 
             <React.Fragment>
+                {/* Spinner will replace the quotes there */}
                 {this.state.haveData ? this.renderContent() : ""}
             </React.Fragment>
         )

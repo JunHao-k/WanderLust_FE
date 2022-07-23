@@ -7,7 +7,7 @@ import { FaDollarSign } from "react-icons/fa";
 
 export default class ListingDetails extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-g6l3fbr2r2f.ws-us54.gitpod.io/listings/"
+    url = "https://8888-junhaok-wanderlustbe-r0fp0plqajz.ws-us54.gitpod.io/listings/"
 
     state = {
         listingId: this.props.showListing,
@@ -71,6 +71,8 @@ export default class ListingDetails extends React.Component {
                                     <RiStarSFill color="#ffbb33" />
                                 ))}
                             </b></span></h2>
+
+                            <h4><span><b className = "text-muted">Prices listed are in country's respective currency</b></span></h4>
                         </div>
                     </div>
 
