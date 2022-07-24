@@ -11,8 +11,8 @@ import '../css/Submission.css'
 
 export default class Submission extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-r0fp0plqajz.ws-us54.gitpod.io/get-submissions"
-    deleteURL = "https://8888-junhaok-wanderlustbe-r0fp0plqajz.ws-us54.gitpod.io/listings/"
+    url = "https://8888-junhaok-wanderlustbe-xk78mecmckv.ws-us54.gitpod.io/get-submissions"
+    deleteURL = "https://8888-junhaok-wanderlustbe-xk78mecmckv.ws-us54.gitpod.io/listings/"
 
     state = {
         email: "",

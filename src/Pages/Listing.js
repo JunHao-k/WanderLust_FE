@@ -16,8 +16,8 @@ import { FaDollarSign } from "react-icons/fa";
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-r0fp0plqajz.ws-us54.gitpod.io/listings"
-    resUrl = "https://8888-junhaok-wanderlustbe-r0fp0plqajz.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-xk78mecmckv.ws-us54.gitpod.io/listings"
+    resUrl = "https://8888-junhaok-wanderlustbe-xk78mecmckv.ws-us54.gitpod.io/"
 
     state = {
         data: [],
@@ -63,13 +63,7 @@ export default class Listing extends React.Component {
             })
         }
     }
-    renderTags = (result) => {
-        for(let eachObj of result){
-            this.setState({
-                tags: eachObj.tags_id
-            })
-        }
-    }
+    
     renderContent = () => {
         
         if (this.state.data.length !== 0) {
@@ -78,7 +72,6 @@ export default class Listing extends React.Component {
                 <div >
                     <Row xs={1} md={2} lg={3} className="g-4 container-fluid" >
                         {Array.from({ length: this.state.data.length }).map((_, idx) => (
-                            
                             <React.Fragment key={this.state.data[idx]._id}>
                                 <Col className="card-holder">
                                     <Card style={{ width: '18rem' }} onClick={() => {
@@ -101,22 +94,11 @@ export default class Listing extends React.Component {
 
                                                 </ListGroup>
 
-                                                {/* <div>
-                                                    {Array.from({ length: this.state.data[idx].tags_id.length }).map((_, idx) => (
-                                                        <Badge bg="secondary">{this.state.data[idx].tags_id[idx]}</Badge>
-                                                    ))}
-                                                </div> */}
+                                                <div>
+                                                    {Array.from(this.state.data[idx].tags_id ,  item => <Badge bg="warning" className = "tags-badge">{item}</Badge>)}
+                                                </div>
 
                                             </div>
-
-
-                                            {/* <h6>Price: {this.state.data[idx].price !== 0 ? this.state.data[idx].price : "Free"}</h6>
-                                            <h6>Score: {this.state.data[idx].ratings}/10</h6>
-                                            <h6>Rated: {Array.from({ length: this.state.data[idx].stars }).map((_, idx) => (
-                                                <RiStarSFill color="#ffbb33" />
-                                            ))}</h6> */}
-
-
                                             <Card.Footer className="text-muted">Click to see more details</Card.Footer>
                                         </Card.Body>
                                     </Card>
