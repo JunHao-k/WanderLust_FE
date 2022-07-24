@@ -1,5 +1,4 @@
 @media screen and (max-width: 576px) {
- 
     #contributeBtn{
         margin-left: 70px;
         width: 226px;
@@ -7,16 +6,17 @@
     }
 } 
 
-
-
 /* medium screen 768 */
 @media screen and  (min-width: 576px) and (max-width: 992px) {
+    
+    
     #contributeBtn{
         margin-left: 225px;
         width: 330px;
         color: black;
         font-size: 20px
     }
+
 }
   
 /* large screen 992 */

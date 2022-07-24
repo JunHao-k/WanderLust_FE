@@ -1,6 +1,6 @@
 import React from "react";
 import Form from 'react-bootstrap/Form';
-import '../css/Contribute.css'
+import '../css/Update.css'
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
@@ -158,7 +158,8 @@ export default class Update extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="contribute-form">
+                <div className = "separator bg-warning"></div>
+                <div className="contribute-form bg-dark text-warning">
                     <Form.Group className="p-3">
                         <Form.Label>Type</Form.Label>
                         <Form.Group className="mb-1 p-2" controlId="formBasicCheckbox">

@@ -1,3 +1,14 @@
 .udBtn{
     margin-left: 13px;
 }
+
+#editBtn{
+    margin-top: .7rem
+}
+
+.udBtn:hover{
+    cursor: pointer;
+    transform: translate3d(0px, -10px, 0px);
+    transition: 0.5s ease;
+    color:white
+}

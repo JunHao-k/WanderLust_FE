@@ -4,13 +4,13 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
-// import Modal from 'react-bootstrap/Modal';
-// import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
 import '../css/Listing.css'
 import axios from 'axios';
 import { RiStarSFill } from "react-icons/ri";
-import { FaDollarSign } from "react-icons/fa";
+import Spinner from "../Components/Spinner";
 
 
 
@@ -27,8 +27,16 @@ export default class Listing extends React.Component {
         place: this.props.place,
         filter: this.props.filter,
         // selectedTag: "",
-        haveData: false
+        haveData: false,
+        show: false
     }
+
+    handleClose = () => {
+        this.setState({
+            show: false
+        })
+    }
+
     async componentDidMount() {
         if (this.state.filter === "free-listing") {
             let response = await axios.get(this.url + `/free?${this.state.query}=${this.state.place}`)
@@ -36,6 +44,11 @@ export default class Listing extends React.Component {
                 data: response.data,
                 haveData: true
             })
+            if (this.state.data.length === 0) {
+                this.setState({
+                    show: true
+                })
+            }
         }
         else if (this.state.filter === "") {
             let response = await axios.get(this.url + `?${this.state.query}=${this.state.place}`)
@@ -43,6 +56,11 @@ export default class Listing extends React.Component {
                 data: response.data,
                 haveData: true
             })
+            if (this.state.data.length === 0) {
+                this.setState({
+                    show: true
+                })
+            }
         }
         else if (this.state.filter === "best-rated") {
             let response = await axios.get(this.url + `/stars?${this.state.query}=${this.state.place}`)
@@ -50,31 +68,40 @@ export default class Listing extends React.Component {
                 data: response.data,
                 haveData: true
             })
+            if (this.state.data.length === 0) {
+                this.setState({
+                    show: true
+                })
+            }
         }
         else {
             let tagsResponse = await axios.get(this.resUrl + "tags")
             let response = await axios.get(this.url + `/tags/${this.state.filter}?${this.state.query}=${this.state.place}`)
-    
+
             this.setState({
                 tagsData: tagsResponse.data,
                 data: response.data,
                 filter: false,
                 haveData: true
             })
+            if (this.state.data.length === 0) {
+                this.setState({
+                    show: true
+                })
+            }
         }
     }
-    
+
     renderContent = () => {
-        
+
         if (this.state.data.length !== 0) {
-            
             return (
                 <div >
                     <Row xs={1} md={2} lg={3} className="g-4 container-fluid" >
                         {Array.from({ length: this.state.data.length }).map((_, idx) => (
                             <React.Fragment key={this.state.data[idx]._id}>
                                 <Col className="card-holder">
-                                    <Card style={{ width: '18rem' }} onClick={() => {
+                                    <Card id = "listing-card" style={{ width: '18rem' }} onClick={() => {
                                         this.props.setListingId(this.state.data[idx]._id)
                                         this.props.setActive("listing-details")
                                     }}>
@@ -95,7 +122,7 @@ export default class Listing extends React.Component {
                                                 </ListGroup>
 
                                                 <div>
-                                                    {Array.from(this.state.data[idx].tags_id ,  item => <Badge bg="warning" className = "tags-badge">{item}</Badge>)}
+                                                    {Array.from(this.state.data[idx].tags_id, item => <Badge bg="warning" className="tags-badge">{item}</Badge>)}
                                                 </div>
 
                                             </div>
@@ -112,29 +139,32 @@ export default class Listing extends React.Component {
         else {
             // console.log(this.state.data)
             return (
-                <div>
-                    <h1>No results found</h1>
-                </div>
+                <Modal className="delete-modal" show={this.state.show} onHide={this.handleClose} backdrop="static" keyboard={false}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>No Results Found</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body >
+                        There seems to be no listing with regards to this particular location
+                        <br />
+                        Would you like to contribute a submission on your travel experience to this location?
+                        <br />
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="warning" onClick={() => {
+                            this.props.setActive('contribute')
+                        }}>Yes</Button>
+                        <Button variant="warning" onClick={() => {
+                            this.handleClose();
+                            this.props.setActive('home');
+                            this.props.clearFilter()
+                        }}>
+                            No
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             )
 
-            // <Modal className="delete-modal" show={this.state.show} onHide={this.handleClose} backdrop="static" keyboard={false}>
-            //     <Modal.Header closeButton>
-            //         <Modal.Title>Delete {this.state.deleteName}?</Modal.Title>
-            //     </Modal.Header>
-            //     <Modal.Body >
-            //         Are you sure you want to delete this listing about {this.state.deleteName} located in
-            //         {this.state.deleteCity} , {this.state.deleteCountry}
-            //     </Modal.Body>
-            //     <Modal.Footer>
-            //         <Button variant="warning" onClick={() => {
-            //             this.deleteListing();
-            //             this.props.setActive('home')
-            //         }}>Yes</Button>
-            //         <Button variant="warning" onClick={this.handleClose}>
-            //             No
-            //         </Button>
-            //     </Modal.Footer>
-            // </Modal>
+
         }
     }
 
@@ -144,7 +174,6 @@ export default class Listing extends React.Component {
         return (
 
             <React.Fragment>
-                {/* Spinner will replace the quotes there */}
                 {this.state.haveData ? this.renderContent() : ""}
             </React.Fragment>
         )

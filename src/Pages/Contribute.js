@@ -131,7 +131,6 @@ export default class Contribute extends React.Component {
             <React.Fragment>
                 <div className = "separator bg-warning"></div>
                 <div className="contribute-form bg-dark text-warning">
-
                     <Form.Group className="p-3">
                         <Form.Label>Type</Form.Label>
                         <Form.Group className="mb-1 p-2" controlId="formBasicCheckbox">

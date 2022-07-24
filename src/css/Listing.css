@@ -9,20 +9,25 @@
 @media screen and (max-width: 576px) {
     .row{
         margin-left: 1px;
-        
     }
+} 
+
+@media screen and  (min-width: 576px) and (max-width: 992px){
+    
 } 
 
 .row{
     background-color: #fff2dd;
     padding-bottom: 20px;
+    width: 100vw;
+    margin-left: 0;
 }
 
 .card{
     box-shadow: 0 2px 20px #be9656;
 }
 
-.card:hover{
+#listing-card:hover{
     cursor: pointer;
     transform: translate3d(0px, -10px, 0px);
     transition: 0.5s ease;

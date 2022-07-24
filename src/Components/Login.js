@@ -10,7 +10,7 @@ export default class Login extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <div>
+                <div className = "login-div">
                     <Form className = "login-box p-3 bg-warning">
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Control type="email" placeholder="Enter email here" value = {this.props.email} 

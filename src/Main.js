@@ -67,19 +67,7 @@ export default class Main extends React.Component {
   }
   
 
-  // toggleFilter = () => {
-  //   if(this.state.filterId){
-  //     this.setState({
-  //       filter: true
-  //     })
-  //   }
-  //   else{
-  //     this.setState({
-  //       filter: false
-  //     })
-  //   }
-    
-  // }
+ 
 
   renderContent() {
     if (this.state.active === "listing") {
@@ -92,6 +80,7 @@ export default class Main extends React.Component {
               filter={this.state.filter}
               setListingId = {this.setListingId}
               setActive={this.setActive}
+              clearFilter = {this.clearFilter}
             />
           </React.Fragment>
       );
