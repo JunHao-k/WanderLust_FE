@@ -293,6 +293,11 @@ export default class Update extends React.Component {
 
                     <Form.Group>
                         <div key={`inline-checkbox`} className="mb-3 p-3">
+                            <div>
+                                <Form.Text className="text-muted p-2">
+                                    Required field 
+                                </Form.Text>
+                            </div>
                             <Form.Label className="p-2">Check all tags applicable to your sharing: </Form.Label>
                             {Array.from({ length: this.state.tagsData.length }).map((_, idx) => (
                                 <Form.Check inline className = "tags-checkbox" label={this.state.tagsData[idx].tag_name} 

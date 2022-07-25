@@ -26,7 +26,6 @@ export default class Listing extends React.Component {
         query: this.props.query,
         place: this.props.place,
         filter: this.props.filter,
-        // selectedTag: "",
         haveData: false,
         show: false
     }
@@ -126,7 +125,7 @@ export default class Listing extends React.Component {
                                                 </div>
 
                                             </div>
-                                            <Card.Footer className="text-muted">Click to see more details</Card.Footer>
+                                            <Card.Footer className="card-footer text-muted">Click to see more details</Card.Footer>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -139,6 +138,7 @@ export default class Listing extends React.Component {
         else {
             // console.log(this.state.data)
             return (
+                
                 <Modal className="delete-modal" show={this.state.show} onHide={this.handleClose} backdrop="static" keyboard={false}>
                     <Modal.Header closeButton>
                         <Modal.Title>No Results Found</Modal.Title>

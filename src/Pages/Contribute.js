@@ -15,7 +15,7 @@ export default class Contribute extends React.Component {
         tagsData: [],
         listingToggle: false,
         noError: true,
-        show: false,
+        createErrorShow: false,
 
         type: "",
         name: "",
@@ -115,13 +115,13 @@ export default class Contribute extends React.Component {
     }
     handleClose = () => {
         this.setState({
-            show: false
+            createErrorShow: false
         })
     }
 
     handleShow = () => {
         this.setState({
-            show: true
+            createErrorShow: true
         })
     }
 
@@ -264,6 +264,11 @@ export default class Contribute extends React.Component {
 
                     <Form.Group>
                         <div key={`inline-checkbox`} className="mb-3 p-2">
+                            <div>
+                                <Form.Text className="text-muted p-2">
+                                    Required field 
+                                </Form.Text>
+                            </div>
                             <Form.Label className="p-2">Check all tags applicable to your sharing: </Form.Label>
                             
                             {Array.from({ length: this.state.tagsData.length }).map((_, idx) => (
@@ -276,6 +281,7 @@ export default class Contribute extends React.Component {
                             ))}
                             
                         </div>
+                        
 
                     </Form.Group>
                     
@@ -294,15 +300,15 @@ export default class Contribute extends React.Component {
                             // show the most updated listing
                             await this.checkError()
                             this.state.noError ? await this.createListing() : this.handleShow()
-                            this.props.setActive('listing');
+                            this.state.noError ? this.props.setActive('listing') : this.handleShow()
                             this.props.updateQuery("city");
                             this.props.updatePlace(this.state.city)
-                            
+                    
                         }}>
                         Share 
                     </Button>
                 </div>
-                <Modal className="delete-modal" show={this.state.show} onHide={this.handleClose} backdrop="static" keyboard={false}>
+                <Modal className="delete-modal" show={this.state.createErrorShow} onHide={this.handleClose} backdrop="static" keyboard={false}>
                     <Modal.Header closeButton>
                         <Modal.Title> Required fields reminder </Modal.Title>
                     </Modal.Header>

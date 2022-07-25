@@ -10,6 +10,9 @@
     .row{
         margin-left: 1px;
     }
+    .card-footer{
+        font-size: 14px;
+    }
 } 
 
 @media screen and  (min-width: 576px) and (max-width: 992px){

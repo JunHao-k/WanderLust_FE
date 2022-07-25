@@ -12,7 +12,7 @@
 /* medium screen 768 */
 @media screen and  (min-width: 576px) and (max-width: 992px) {
     #contributeBtn{
-        margin-left: 225px;
+        margin-left: 215px;
         width: 330px;
         color: black;
         font-size: 20px
@@ -21,10 +21,8 @@
   
 /* large screen 992 */
 @media screen and (min-width: 992px) {
-    
-    
     #contributeBtn{
-        margin-left: 345px;
+        margin-left: 300px;
         width: 500px;
         color: black;
         font-size: 23px
@@ -33,7 +31,6 @@
 }
 
 .contribute-form{
-    /* margin-top: 10px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
