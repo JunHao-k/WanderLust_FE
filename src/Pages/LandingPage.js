@@ -7,11 +7,12 @@ import axios from "axios";
 import { searchSchema } from "../Validations/SearchValidation";
 // import LandingError from "../Components/LandingError";
 import Modal from 'react-bootstrap/Modal';
+import { BsFillFilterSquareFill } from "react-icons/bs"
 
 
 export default class LandingPage extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-xk78mecmckv.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-g4s1zflut0h.ws-us54.gitpod.io/"
 
     state = {
         show: true,
@@ -77,14 +78,20 @@ export default class LandingPage extends React.Component {
             <React.Fragment>
                 <div className="landing-body">
                     <div className="overlay">
+                        
                         <Form className="search-body">
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="text" placeholder="Search country or city" name="search" value={this.props.place} onChange={(event) => {
-                                    this.props.updatePlace(event.target.value)
-                                    this.updateSearch(this.props.place)
-                                    // this.updateSearch(event)
-                                }} />
+                            
+                            <Form.Group className="mb-3" controlId="formBasicSearch">
+                                <div className = "d-flex">
+                                    <Form.Control type="text" placeholder="Search country or city" name="search" value={this.props.place} onChange={(event) => {
+                                        this.props.updatePlace(event.target.value)
+                                        this.updateSearch(this.props.place)
+                                        
+                                    }}/>
+                                    <button id = "filterBtn"><BsFillFilterSquareFill size = {25} color = "#ffbb33"/></button>
+                                </div>
                             </Form.Group>
+                            
                             <div className="location-checkbox">
 
                                 <Form.Group className="mb-3 p-2" controlId="formBasicCheckbox">

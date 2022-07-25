@@ -7,7 +7,7 @@ import { FaDollarSign } from "react-icons/fa";
 
 export default class ListingDetails extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-xk78mecmckv.ws-us54.gitpod.io/listings/"
+    url = "https://8888-junhaok-wanderlustbe-g4s1zflut0h.ws-us54.gitpod.io/listings/"
 
     state = {
         listingId: this.props.showListing,

@@ -34,10 +34,16 @@
 .overlay{
     position: absolute;
     margin-top: 40vh;
-    height: 190px;
+    height: 300px;
     background-color: grey;
     width: 300px;
     margin-left: 40px;
-    /* border: 1px solid black; */
+    border-radius: 10%;
 }
 
+#filterBtn{
+    background-color: transparent;
+    border: #ffbb33 solid 2px;
+    border-radius: 8%;
+    margin-left: .2rem
+}

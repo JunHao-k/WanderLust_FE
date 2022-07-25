@@ -15,8 +15,8 @@ import Spinner from "../Components/Spinner";
 
 export default class Submission extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-xk78mecmckv.ws-us54.gitpod.io/get-submissions"
-    deleteURL = "https://8888-junhaok-wanderlustbe-xk78mecmckv.ws-us54.gitpod.io/listings/"
+    url = "https://8888-junhaok-wanderlustbe-g4s1zflut0h.ws-us54.gitpod.io/get-submissions"
+    deleteURL = "https://8888-junhaok-wanderlustbe-g4s1zflut0h.ws-us54.gitpod.io/listings/"
 
     state = {
         email: "",
