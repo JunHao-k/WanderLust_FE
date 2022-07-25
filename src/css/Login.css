@@ -1,13 +1,45 @@
+/* small screen 576 */
+@media screen and (max-width: 576px) {
+    #loginBtn{
+        width: 260px;
+    }
+    #login-email{
+        width: 260px;
+    }
+} 
+  
+/* medium screen 768 */
+@media screen and  (min-width: 576px) and (max-width: 992px) {
+    #loginBtn{
+        width: 430px;
+    }
+    #login-email{
+        width: 430px;
+    }
+
+}
+  
+/* large screen 992 */
+@media screen and (min-width: 992px) {
+    #loginBtn{
+        width: 500px;
+    }
+    #login-email{
+        width: 500px;
+    }
+}
+
+
+
+
 .login-box{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: red; */
 }
 
 #loginBtn{
-    /* background-color: rgba(0 , 0 , 0 , 0.08); */
     color: white
 }
 

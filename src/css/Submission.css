@@ -1,3 +1,36 @@
+/* small screen 576 */
+@media screen and (max-width: 576px) {
+    #editBtn{
+        width: 230px;
+    }
+    #deleteBtn{
+        width: 230px;
+    }
+} 
+  
+/* medium screen 768 */
+@media screen and  (min-width: 576px) and (max-width: 992px) {
+    #editBtn{
+        width: 230px;
+    }
+    #deleteBtn{
+        width: 230px;
+    }
+
+}
+  
+/* large screen 992 */
+@media screen and (min-width: 992px) {
+    #editBtn{
+        width: 230px;
+    }
+    #deleteBtn{
+        width: 230px;
+    }
+}
+
+
+
 .udBtn{
     margin-left: 13px;
 }

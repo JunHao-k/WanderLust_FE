@@ -36,7 +36,7 @@ export default class Update extends React.Component {
         image_url: ""
     }
 
-    url = "https://8888-junhaok-wanderlustbe-g4s1zflut0h.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-kh7ct609pd2.ws-us54.gitpod.io/"
     async componentDidMount() {
         let response1 = await axios.get(this.url + "countries")
         let response2 = await axios.get(this.url + "tags")
@@ -59,7 +59,7 @@ export default class Update extends React.Component {
             email: response3.data.email,
             article: response3.data.article,
             price: response3.data.price,
-            tags_id: response3.data.tags_id,
+            //tags_id: response3.data.tags_id,
             image_url: response3.data.images
         })
     }
@@ -115,6 +115,7 @@ export default class Update extends React.Component {
         }
         let isValid = await updateSchema.isValid(updateData)
         console.log(isValid)
+        console.log(updateData.tags_id)
         this.setState({
             noError: isValid
         })

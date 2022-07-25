@@ -16,8 +16,8 @@ import Spinner from "../Components/Spinner";
 
 export default class Listing extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-g4s1zflut0h.ws-us54.gitpod.io/listings"
-    resUrl = "https://8888-junhaok-wanderlustbe-g4s1zflut0h.ws-us54.gitpod.io/"
+    url = "https://8888-junhaok-wanderlustbe-kh7ct609pd2.ws-us54.gitpod.io/listings"
+    resUrl = "https://8888-junhaok-wanderlustbe-kh7ct609pd2.ws-us54.gitpod.io/"
 
     state = {
         data: [],

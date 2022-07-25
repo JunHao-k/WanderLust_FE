@@ -15,8 +15,8 @@ import Spinner from "../Components/Spinner";
 
 export default class Submission extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-g4s1zflut0h.ws-us54.gitpod.io/get-submissions"
-    deleteURL = "https://8888-junhaok-wanderlustbe-g4s1zflut0h.ws-us54.gitpod.io/listings/"
+    url = "https://8888-junhaok-wanderlustbe-kh7ct609pd2.ws-us54.gitpod.io/get-submissions"
+    deleteURL = "https://8888-junhaok-wanderlustbe-kh7ct609pd2.ws-us54.gitpod.io/listings/"
 
     state = {
         email: "",
@@ -122,7 +122,7 @@ export default class Submission extends React.Component {
                                             }}>
                                                 Edit
                                             </Button>
-                                            <Button variant="custom bg-warning mb-3 udBtn" onClick={() => {
+                                            <Button variant="custom bg-warning mb-3 udBtn" id="deleteBtn" onClick={() => {
                                                 this.handleShow();
                                                 this.deleteDetails(
                                                     this.state.mySubmission[idx].name,
