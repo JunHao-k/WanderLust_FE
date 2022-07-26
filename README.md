@@ -23,30 +23,36 @@ As someone who likes to travel, I always find myself spending a lot of time rese
 
 
 #### Users' Goals
- The younger generation and some others either with a tighter budget or prefer small groups will travel by themselves, so they will need help to ease their reseach.
+ Usually, people around the age of 23 to 33 where they have the financial capabilities and lesser life commitments (E.g., family kids etc) to allow them to have time and money to travel. They most often prefer to travel by themselves or with friends. This means that they often have to plan the trips themselves. 
+ This platform will help them to get the help they need in terms of planning of itinerary by allowing them to source the website to look for some ideas for their travel plans or to share their experiences during their travels in a particular country/city so that other users can benefit from it.
 
 1. **Organisation**
-   - Objective: To have a centralized space to contribute and search for topics around Muslim travels
-2. **Users: Muslim Travellers**
-   - Objective: To be able to research quickly about topics around Muslim friendly locations 
+   - Objective: To have a centralized space to contribute and search for topics around travel locations
+
+2. **Users: Travellers**
+   - Objective: To be able to research quickly to find more information about a particular travel destination from other users that have been to the location 
+
    - Needs:
-      - To search about food, mosques or even attractions in a city
+      - To search about attractions, food and activities that other users have experienced in a target country or city
       - To be able to contribute after their travels
+   
    - Demographics and Characteristics:
        - Young to working adults
        - Enthusiastic about travelling
        - Very used to browsing internet
+   
    - Pain point:
-       - Need to find out about a location quickly for Muslim friendly amenities
-       - Need to find out about a location quickly for halal food
+       - Need to find out what is attractive about the certain location.
+       - Need to find out what cannot be missed when touring a certain city or country
+       - Need to learn about these experiences first from people that were in their positions and went ahead to explore
 
 
 User Stories | Acceptance Criteria(s)
 ------------ | -------------
-As a muslim tourist, I am concerned about whether there is halal food in a location | Articles should be searchable by topic on food in a location
-As a muslim tourist, I am concerned about praying areas in a location that may not necessary have a mosque | Articles should be searchable by topic on praying spaces and its amenities in a location
-As a muslim tourist, I am interested in seeing architecture inspired by Muslim civilizations | Articles should be searchable by topic on the type of attractions
-As a muslim tourist, I am interested in visiting mosque in the local area | Articles should be searchable by topic on mosques in a location
+As a potential tourist to the target city/country, I am interested to know what attractions/food/activities that the location has to offer that is deemed a good experience by other travellers | Articles should be able to show all the places visited by other users and see how well they are rated by these users along with the price they spend at the attarction/food/activity
+As a potential tourist that wishes to stick to a budget but also experience a good time in a particular location | Users must be able to search for articles that shows attractions that are free
+As a potential tourist, I want to visit locations that are highly-rated(4-5 stars) | Articles should be searchable by the best-rated ones
+As a potential tourist, I may have certain preferences when it comes to looking for attractions, I could prefer places that have scenery or activities to do | Articles should be searchable by what they are best known for, for example, searching for attractions with scenery may return articles that involves places with scenic views as part of their attraction.
 
 ### Scope
 
