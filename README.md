@@ -2,7 +2,7 @@
 
 Access live demo site [here](https://the-wanderlust-experience.netlify.app/)
 
-![Mock-up](./src/css/mockup.jpg)
+![Mock-up](./src/Images/mockup.jpg)
 
 ## Background
 
