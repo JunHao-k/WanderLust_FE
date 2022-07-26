@@ -8,6 +8,7 @@ import { searchSchema } from "../Validations/SearchValidation";
 // import LandingError from "../Components/LandingError";
 import Modal from 'react-bootstrap/Modal';
 import {  BsFillFilterSquareFill } from "react-icons/bs"
+import Spinner from "../Components/Spinner";
 
 
 export default class LandingPage extends React.Component {
@@ -90,12 +91,15 @@ export default class LandingPage extends React.Component {
     render() {
         return (
             <React.Fragment>
+              
                 <div className="landing-body">
+                    
                     <div className="overlay">
                         
                         <Form className="search-body">
                             
                             <Form.Group className="mb-3" controlId="formBasicSearch">
+
                                 <div className = "d-flex">
                                     <Form.Control id = "main-page-search" type="text" placeholder="Search country or city" name="search" value={this.props.place} onChange={(event) => {
                                         this.props.updatePlace(event.target.value)

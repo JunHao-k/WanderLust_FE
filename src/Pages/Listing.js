@@ -92,7 +92,6 @@ export default class Listing extends React.Component {
     }
 
     renderContent = () => {
-
         if (this.state.data.length !== 0) {
             return (
                 <div >
@@ -119,11 +118,9 @@ export default class Listing extends React.Component {
                                                     ))}</span></ListGroup.Item>
 
                                                 </ListGroup>
-
                                                 <div>
                                                     {Array.from(this.state.data[idx].tags_id, item => <Badge bg="warning" className="tags-badge">{item}</Badge>)}
                                                 </div>
-
                                             </div>
                                             <Card.Footer className="card-footer text-muted">Click to see more details</Card.Footer>
                                         </Card.Body>
@@ -136,9 +133,7 @@ export default class Listing extends React.Component {
             )
         }
         else {
-            // console.log(this.state.data)
             return (
-                
                 <Modal className="delete-modal" show={this.state.show} onHide={this.handleClose} backdrop="static" keyboard={false}>
                     <Modal.Header closeButton>
                         <Modal.Title>No Results Found</Modal.Title>
@@ -174,7 +169,7 @@ export default class Listing extends React.Component {
         return (
 
             <React.Fragment>
-                {this.state.haveData ? this.renderContent() : ""}
+                {this.state.haveData ? this.renderContent() : <Spinner/>}
             </React.Fragment>
         )
 
