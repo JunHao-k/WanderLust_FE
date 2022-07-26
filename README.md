@@ -82,7 +82,7 @@ Note:
 Added a submission branch where users can verify their identity using his/her own email to access a list of articles he/she posted to do editing or deleting
 
 ### Skeleton
-Initial prototyping is seen here [prototype](./src/Images/wireframe1.jpg)(./src/Images/wireframe2.jpg)
+Initial prototyping is seen here ![prototype](./src/Images/wireframe1.jpg)(./src/Images/wireframe2.jpg)
 
 The prototype is done with a mobile first approach and throughout the project it have been re-visited several times while working on the project and styling across devices. 
 
