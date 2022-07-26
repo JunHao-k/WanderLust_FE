@@ -2,9 +2,11 @@
 
 Access live demo site [here](https://the-wanderlust-experience.netlify.app/)
 
-<figure>
-    <img src="../css/mockup.jpg" height="450" alt="Mock up">
-</figure>
+![Mock-up](./src/css/mockup.jpg)
+<!-- <figure>
+    <img src="./css/mockup.jpg" height="450" alt="Mock up">
+
+</figure> -->
 
 ## Background
 
