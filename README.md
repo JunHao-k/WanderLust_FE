@@ -3,18 +3,14 @@
 Access live demo site [here](https://the-wanderlust-experience.netlify.app/)
 
 ![Mock-up](./src/css/mockup.jpg)
-<!-- <figure>
-    <img src="./css/mockup.jpg" height="450" alt="Mock up">
-
-</figure> -->
 
 ## Background
 
-It is estimated that Muslims make up about 24.7% of the world's population. The Middle East-North Africa region has the highest percentage of Muslims countries[^1], while 60% of Muslims reside in Asia. These regions are more than likely to have culture, communities, food, and amenities build based on the religion, however they are often not well recorded, not gathered in databases locally and may not even be searchable. While for the rest of the world with Muslims minorities, these information are even more unreachable unless you are a local.
+There are many travel blogs created by avid travellers detailing their experiences when they go to certain places. However, these blogs may only be chanced upon by people who makes more detailed searches when they are loking for more information on a particular place. These travel destinations are often not well recorded, not gathered in databases locally and require people to trawl and search from various websites to piece different information on them which takes time. This is the reason why planning for a holiday overseas requires alot of research time to plan out an itinerary.
 
 ## Project Overview
 
-For Muslim travellers and tourists, their main concerns mainly will be whether there are halal food, prayer spaces, and nearby mosques in a certain area. With the number of Muslims around the world and growing accessibility to the internet, it will be beneficial to allow them to share and contribute these information centrally.
+For people looking to travel, their main methods to plan an itinerary is to source online and look draw ideas from the experiences of other travellers who have been to those locations. They would look primarily at the costs involved such as entrance fee to an attraction or price they have to pay to engage in an activity. Another concern is how highly rated is the attraction in terms of enjoyment as experienced by other travellers. If they haven't been to a certain city in a country, they would most likely plan their itinerary by sourcing from others' experiences. It would be better if there is a platform that allows people to share their experiences win a country/city.
 
 ---
 
@@ -23,10 +19,11 @@ For Muslim travellers and tourists, their main concerns mainly will be whether t
 ### Strategy
 
 #### Organization's Goals
-As a muslim who likes to travel around myself, I always find myself spending a lot of time researching places of interests for muslim friendly travel offline by asking people and visiting various sites online. So in a attempt to overcome this, a centralized informational site will be beneficial. 
+As someone who likes to travel, I always find myself spending a lot of time researching places of interests in cities and countries that I am visiting by asking people and visiting various sites online. To be able to facilitate such exchange of information between avid travellers, a one-stop centralised platform for each individual to share their experiences will help greatly with itinerary planning.
+
 
 #### Users' Goals
-Muslims tourism is a growing industry and usually the older generation may go on a tour with a travel agency in order to minimize the time needed for their own research. However, the younger generation and some others either with a tighter budget or prefer small groups will travel by themselves, so they will need help to ease their reseach.
+ The younger generation and some others either with a tighter budget or prefer small groups will travel by themselves, so they will need help to ease their reseach.
 
 1. **Organisation**
    - Objective: To have a centralized space to contribute and search for topics around Muslim travels
