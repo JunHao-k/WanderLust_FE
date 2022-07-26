@@ -1,10 +1,9 @@
 # WanderLust
-<!-- # WanderLust
 
-Access live demo site [here](https://muslimgowhere.netlify.app/)
+Access live demo site [here](https://the-wanderlust-experience.netlify.app/)
 
 <figure>
-    <img src="/readme/device_mockups.png" height="450" alt="Entity Relationship Diagram">
+    <img src="./css/mockup.jpg" height="450" alt="Mock up">
 </figure>
 
 ## Background
@@ -198,4 +197,4 @@ Steps to publish[^2]:
 
 ---
 
-[^1]: Statistics are taken from [here](https://www.pewresearch.org/religion/2009/10/07/mapping-the-global-muslim-population/) -->
+[^1]: Statistics are taken from [here](https://www.pewresearch.org/religion/2009/10/07/mapping-the-global-muslim-population/)
