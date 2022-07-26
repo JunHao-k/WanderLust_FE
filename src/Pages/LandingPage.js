@@ -12,7 +12,7 @@ import {  BsFillFilterSquareFill } from "react-icons/bs"
 
 export default class LandingPage extends React.Component {
 
-    url = "https://8888-junhaok-wanderlustbe-kh7ct609pd2.ws-us54.gitpod.io/"
+    url = "https://tgc-wanderlust.herokuapp.com/"
 
     state = {
         show: true,

@@ -36,7 +36,7 @@ export default class Update extends React.Component {
         image_url: ""
     }
 
-    url = "https://8888-junhaok-wanderlustbe-kh7ct609pd2.ws-us54.gitpod.io/"
+    url = "https://tgc-wanderlust.herokuapp.com/"
     async componentDidMount() {
         let response1 = await axios.get(this.url + "countries")
         let response2 = await axios.get(this.url + "tags")
