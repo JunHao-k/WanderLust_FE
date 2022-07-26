@@ -10,7 +10,7 @@ There are many travel blogs created by avid travellers detailing their experienc
 
 ## Project Overview
 
-For people looking to travel, their main methods to plan an itinerary is to source online and look draw ideas from the experiences of other travellers who have been to those locations. They would look primarily at the costs involved such as entrance fee to an attraction or price they have to pay to engage in an activity. Another concern is how highly rated is the attraction in terms of enjoyment as experienced by other travellers. If they haven't been to a certain city in a country, they would most likely plan their itinerary by sourcing from others' experiences. It would be better if there is a platform that allows people to share their experiences win a country/city.
+For people looking to travel, their main methods to plan an itinerary is to source online and look draw ideas from the experiences of other travellers who have been to those locations. They would look primarily at the costs involved such as entrance fee to an attraction or price they have to pay to engage in an activity. Another concern is how highly rated is the attraction in terms of enjoyment as experienced by other travellers. If they haven't been to a certain city in a country, they would most likely plan their itinerary by sourcing from others' experiences. It would be better if there is a platform that allows people to share their experiences in a country/city.
 
 ---
 
@@ -24,7 +24,7 @@ As someone who likes to travel, I always find myself spending a lot of time rese
 
 #### Users' Goals
  Usually, people around the age of 23 to 33 where they have the financial capabilities and lesser life commitments (E.g., family kids etc) to allow them to have time and money to travel. They most often prefer to travel by themselves or with friends. This means that they often have to plan the trips themselves. 
- This platform will help them to get the help they need in terms of planning of itinerary by allowing them to source the website to look for some ideas for their travel plans or to share their experiences during their travels in a particular country/city so that other users can benefit from it.
+ This platform will allow them to get the help they need in terms of planning of itinerary by allowing them to source the website to look for some ideas for their travel plans or to share their experiences during their travels in a particular country/city so that other users can benefit from it.
 
 1. **Organisation**
    - Objective: To have a centralized space to contribute and search for topics around travel locations
@@ -57,43 +57,36 @@ As a potential tourist, I may have certain preferences when it comes to looking 
 ### Scope
 
 ### Database
-<figure>
-    <img src="/readme/erd.jpg" height="450" alt="Entity Relationship Diagram">
-</figure>
 
-ERD is drawn up to demonstrate the different relationship between enitities for the site before proceeding to model the database in MongoDB.
-
-A backend server will thus be necessary in order to allow communication between the site and MongoDB. As such an Express server have been set up and deployed to [Heroku](https://www.heroku.com/). API endpoints are accessible via the base at https://muslim-go-where-api.herokuapp.com/.
+A backend server will thus be necessary in order to allow communication between the site and MongoDB. As such an Express server have been set up and deployed to [Heroku](https://www.heroku.com/). API endpoints are accessible via the base at https://tgc-wanderlust.herokuapp.com/.
 
 #### Content
 Content will be crowd sourced from public, thus presentation of data contributed to the site is essential. A landing page is also included for branding purposes and allows site visitors to have a quick glance and understanding of the site.
 
 #### Functional
-- Search function against attributes such as Title, Description, Details, and Tags
-- Filter function of all articles posted on its Country, City, Categories and/or Sub-categories
+- Search function of all articles posted on its Country, City, Categories and/or Sub-categories
 - Create new article function
-- Edit and Delete function on each article
-- Rating function on each article
-- Commenting function on each article
-- Add and Remove function on a article to collection
+- Edit and Delete function on each article 
 - In order to exert control, registration/verification on email is included for actions performed on articles and collections
 
 #### Non-functional
-- Mobile responsiveness: forms and search results display should not obstruct users' experience in the site
-- Accessibility: colors used are safe for colorblind, interactive elements have aria-labels for assistive technology 
-- Performance: database may get larger and slower to load overtime, a loading screen is included to help bridge the gap between site and data loading
+- Mobile responsiveness: Forms and search results display should not obstruct users' experience in the site
+- Accessibility: Colors used will not make it hard for users to make out the features of the app
+- Performance: Database may get larger and slower to load overtime, a loading screen is included to help bridge the gap between site and data loading
 
 ### Structure
-<figure>
-    <img src="/readme/sitemap.png" height="450" alt="Information Architecture and Design">
-</figure>
+
+![Site-map](./src/Images/site_map.jpg)
+
+Note: 
+Added a submission branch where users can verify their identity using his/her own email to access a list of articles he/she posted to do editing or deleting
 
 ### Skeleton
-Initial prototyping can be found at the Miro board [here](https://miro.com/app/board/uXjVODlMLfM=/?share_link_id=8111450614)
+Initial prototyping is seen here [prototype](./src/Images/wireframe1.jpg)(./src/Images/wireframe2.jpg)
 
-The prototype is done with a mobile first approached and throughout the project it have been re-visited several times while working on the project and styling across devices. 
+The prototype is done with a mobile first approach and throughout the project it have been re-visited several times while working on the project and styling across devices. 
 
-### Surface
+<!-- ### Surface
 
 In order to complement various design and layouts intended for the site, [MUI](https://mui.com/) have been chosen for its design system. Also because MUI is a set of React UI tools that are component based which will help to ease development time spent.
 
@@ -202,4 +195,4 @@ Steps to publish[^2]:
 
 ---
 
-[^1]: Statistics are taken from [here](https://www.pewresearch.org/religion/2009/10/07/mapping-the-global-muslim-population/)
+[^1]: Statistics are taken from [here](https://www.pewresearch.org/religion/2009/10/07/mapping-the-global-muslim-population/) -->

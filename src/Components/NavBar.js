@@ -13,7 +13,7 @@ export default class NavBar extends React.Component {
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <a className="navbar-brand text-warning" href="#">
-                    <img src = {require("../css/branding.jpg")} alt={"branding"} width="80px" height="50" style = {{marginRight: "10px"}} class="d-inline-block align-text-center"/>
+                    <img src = {require("../Images/branding.jpg")} alt={"branding"} width="80px" height="50" style = {{marginRight: "10px"}} class="d-inline-block align-text-center"/>
                         WanderLust
                     </a>
                     <button className="navbar-toggler border border-warning text-warning"

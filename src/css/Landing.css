@@ -219,7 +219,7 @@
 .landing-body{
     position: relative;
     height: 100vh;
-    background-image: url(./travel2.jpg);
+    background-image: url(../Images/travel2.jpg);
     background-size: cover;
 }
 

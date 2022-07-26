@@ -193,7 +193,7 @@ export default class Submission extends React.Component {
         return (
             <React.Fragment>
                 <Login getEmail={this.getEmail} email={this.state.email} getData={this.getData} />
-                {this.state.haveData ? this.renderContent() : <Spinner/>}
+                {this.state.haveData ? this.renderContent() : ""}
             </React.Fragment>
         )
     }
