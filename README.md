@@ -101,14 +101,14 @@ The prototype is done with a mobile first approach and throughout the project it
 #### Font
 _Reem Kufi_ have been chosen as the font for headings, titles, subtitles, etc, because it was designed with the Arabic calligraphy in mind and then combined with Latin component later on. With the Arabic calligraphy system as its backbone, the font will breed familiarity with its intended users.
 
-_Raleway_ is used for all body text meant for reading, to server as a contrast to the former font with its thinner weight and lining.
+_Raleway_ is used for all body text meant for reading, to server as a contrast to the former font with its thinner weight and lining. -->
 
 ---
 
 ## Testing
-Test Cases can be found [here](/readme/test_cases.xlsx)
+Test Cases can be found [here](./src/Testcases.pdf)
 
---- -->
+---
 
 ## Dependencies and Sources
 
