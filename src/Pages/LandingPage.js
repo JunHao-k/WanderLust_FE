@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
 import { searchSchema } from "../Validations/SearchValidation";
-// import LandingError from "../Components/LandingError";
 import Modal from 'react-bootstrap/Modal';
 import {  BsFillFilterSquareFill } from "react-icons/bs"
 import Spinner from "../Components/Spinner";

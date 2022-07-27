@@ -86,22 +86,22 @@ Initial prototyping is seen here ![prototype1](./src/Images/wireframe1.jpg)![pro
 
 The prototype is done with a mobile first approach and throughout the project it have been re-visited several times while working on the project and styling across devices. 
 
-<!-- #### Color Scheme
+#### Color Scheme
 
-<figure>
-    <img src="/readme/color_scheme.png" height="450" alt="Color Scheme">
-</figure>
+![Colour-Scheme](./src/Images/project2_colour_theme.jpg)
 
-- As green and gold are often associated with Islam, they have been chosen specifically for the site
+- The duller colours like light grey are use to present the webpage as a more comtemporary modern website at the landing page 
 - The rest of the colors are then randomly generated via [Coolors](https://coolors.co/)
-- Brighter colors are chosen to be used emphasized content
+- The yellowish series of colours were meant to bring out the warm happy feelings associated with reminiscing about travels
 - Darker colors are chosen to be used for text, shadows and for overlaying images
-- Lighter colors are chosen to be used as background colors, and to be used as contrast text colors
+- Feedback was that the yellowish colours were rather contrasting with the comtemporary feels the main landing page provides. Therefore, there will be further changes made to the colour theme 
 
 #### Font
-_Reem Kufi_ have been chosen as the font for headings, titles, subtitles, etc, because it was designed with the Arabic calligraphy in mind and then combined with Latin component later on. With the Arabic calligraphy system as its backbone, the font will breed familiarity with its intended users.
+VT323 have been chosen as the font for headings, titles, subtitles, etc, because it looked compatible with the colours 
 
-_Raleway_ is used for all body text meant for reading, to server as a contrast to the former font with its thinner weight and lining. -->
+Verdana, Geneva, sans-serif is used for all body text meant for reading, to server as a contrast to the former font with its thinner weight and lining.
+
+There was also feedback that font-use was rather contrasting between those meant for reading and those meant for subtitles, there will also be changes made to this when colour theme is changed
 
 ---
 
