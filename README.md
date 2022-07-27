@@ -171,7 +171,7 @@ Prerequisites:
 - Netlify is connected to GitHub repository via "New site from Git"
 - "GitHub"  has been selected for continuous deployment
 
-Steps to publish[^1]:
+Steps to publish:
 1. After connecting to repository, ensure edits were added, commited, and pushed to Github repository
 2. Netlify will start to build and perform automatic deployments upon detecting changes
 
