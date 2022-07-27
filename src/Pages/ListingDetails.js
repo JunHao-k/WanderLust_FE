@@ -3,7 +3,6 @@ import React from "react";
 import "../css/listingDetails.css"
 import "../css/Separator.css"
 import { RiStarSFill } from "react-icons/ri";
-import { FaDollarSign } from "react-icons/fa";
 
 export default class ListingDetails extends React.Component {
 

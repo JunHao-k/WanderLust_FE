@@ -86,11 +86,7 @@ Initial prototyping is seen here ![prototype1](./src/Images/wireframe1.jpg)![pro
 
 The prototype is done with a mobile first approach and throughout the project it have been re-visited several times while working on the project and styling across devices. 
 
-<!-- ### Surface
-
-In order to complement various design and layouts intended for the site, [MUI](https://mui.com/) have been chosen for its design system. Also because MUI is a set of React UI tools that are component based which will help to ease development time spent.
-
-#### Color Scheme
+<!-- #### Color Scheme
 
 <figure>
     <img src="/readme/color_scheme.png" height="450" alt="Color Scheme">
@@ -112,7 +108,7 @@ _Raleway_ is used for all body text meant for reading, to server as a contrast t
 ## Testing
 Test Cases can be found [here](/readme/test_cases.xlsx)
 
----
+--- -->
 
 ## Dependencies and Sources
 
@@ -121,43 +117,29 @@ Test Cases can be found [here](/readme/test_cases.xlsx)
 2. [MongoDB Node Driver](https://www.mongodb.com/docs/drivers/node/current/) for accessing database on MongoDB using their API
 3. [cors](https://www.npmjs.com/package/cors) as middleware to enable CORS
 4. [dotenv](https://www.npmjs.com/package/dotenv) to separate code from envrionment variables
+5. [Yup](https://github.com/jquense/yup) is used for validation of forms in the backend
 
 ### Frontend
 1. [React](https://reactjs.org/) as the frontend framework
-2. [React Router DOM](https://reactrouter.com/docs/en/v6/getting-started/overview) for routing paths in React app
-3. [Axios](https://axios-http.com/) as HTTP client to Express server endpoints
-4. [MUI](https://mui.com/material-ui/getting-started/installation/) served as base styles for the React app
-5. [MUI RTE](https://github.com/niuware/mui-rte) is used as rich text editor in form submission
-6. [Draft JS](https://draftjs.org/) is used to convert the RTE Editor State
-7. [Markdown Draft JS](https://draftjs.org/) is used to convert between draftjs to markdown format to store to database
-8. [React Markdown](https://remarkjs.github.io/react-markdown/) is used to convert markdown for display
-9. [React MUI Carousel](https://github.com/Learus/react-material-ui-carousel) is used as carousel component
-10. [React Moment](https://github.com/headzoo/react-moment) is used to convert datetime to preferable format
+2. [Axios](https://axios-http.com/) as HTTP client to Express server endpoints
+3. [React-Bootstrap](https://react-bootstrap.github.io/) is used to do most of the styling of the website including forms
+4. [Yup](https://github.com/jquense/yup) is used for validation of forms 
+
 
 ### Platforms and Software
 1. [Git](https://git-scm.com/) for version control
 2. [GitHub](http://github.com) for the repository
-3. [Visual Studio Code](https://code.visualstudio.com/) for code editing
-4. [Heroku](https://www.heroku.com/) for deployment of Express server
-5. [Netlify](https://www.netlify.com/) for deployment of React app
+3. [Heroku](https://www.heroku.com/) for deployment of Express server
+4. [Netlify](https://www.netlify.com/) for deployment of React app
 
 ### Logos and Images
-1. Logo used is a composition of vectors created by and downloaded from [Freepik](https://www.freepik.com/vectors/logo-pack)
-2. Homepage banner is a photo by [Victoriano Izquierdo](https://unsplash.com/photos/HoevDVvxInw) downloaded from [Unsplash](https://unsplash.com)
-3. Attractions banner is a photo by [Mohamed Imran](https://www.pexels.com/photo/a-white-concrete-building-at-night-5946376/) downloaded from [Pexels](https://www.pexels.com/)
-4. Mosque banner is a photo by [Konevi](https://www.pexels.com/photo/photography-of-brown-concrete-dome-building-2159549/) downloaded from [Pexels](https://www.pexels.com/)
-5. Food banner is a photo by [Damia Mustafa](https://unsplash.com/photos/zbE7u3TdL2o) downloaded from [Unsplash](https://unsplash.com)
-6. Praying Spaces banner is a photo by [RODNAE Productions](https://www.pexels.com/photo/person-kneeling-with-face-on-ground-7249372/) downloaded from [Pexels](https://www.pexels.com/)
-7. Default photo for Attraction category is a photo by [Milad Alizadeh](https://unsplash.com/photos/ghydVxL2x7w) downloaded from [Unsplash](https://unsplash.com)
-8. Default photo for Mosque category is a photo by [said alamri](https://unsplash.com/photos/cIUozi9BM34) downloaded from [Unsplash](https://unsplash.com)
-9. Default photo for Food category is a photo from [Ella Olsson](https://unsplash.com/photos/KPDbRyFOTnE) downloaded from [Unsplash](https://unsplash.com)
-10. Default photo for Praying Spaces category is a photo by [Ashkan Forouzani](https://unsplash.com/photos/LaCell9GykQ) downloaded from [Unsplash](https://unsplash.com)
+1. Logo used is designed using canva [Canva](https://www.canva.com/q/pro/)
+2. Landing page background photo is by [Garrett Parker](https://unsplash.com/@garrettpsystems) downloaded from [Unsplash](https://unsplash.com)
+
    
 ### Other Attributions
 1. [Paul Chor](https://github.com/kunxin-chor) for all his guidance and using his tutorials as references for the codes 
-2. [Coolors](https://coolors.co/) for matching the green and mecca gold selected
-3. [DataHub](https://datahub.io/core/country-list) for the data used in MongoDB's Countries population
-4. [Johan Dufour](https://github.com/lutangar/cities.json) for the data used in MongoDB's Countries embedded Cities population
+2. [Keeguon](https://gist.github.com/keeguon/2310008) for the data used in MongoDB's Countries collection
 
 ---
 
@@ -179,7 +161,7 @@ Steps to publish:
 2. Heroku will perform automatic deployments upon detecting changes
 
 ### Frontend Deployment
-[![Netlify Status](https://api.netlify.com/api/v1/badges/24d0b156-5ce6-440f-832d-f37cf429d50c/deploy-status)](https://app.netlify.com/sites/muslimgowhere/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f573eaaf-f00e-4539-9ada-cb55e4687f2c/deploy-status)](https://app.netlify.com/sites/the-wanderlust-experience/deploys)
 
 The React app is hosted using [Netlify](https://www.netlify.com/).
 
@@ -194,5 +176,3 @@ Steps to publish[^2]:
 2. Netlify will start to build and perform automatic deployments upon detecting changes
 
 ---
-
-[^1]: Statistics are taken from [here](https://www.pewresearch.org/religion/2009/10/07/mapping-the-global-muslim-population/) -->

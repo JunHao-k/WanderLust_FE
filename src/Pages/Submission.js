@@ -11,7 +11,6 @@ import Badge from 'react-bootstrap/Badge';
 import { RiStarSFill } from "react-icons/ri";
 import axios from "axios";
 import '../css/Submission.css'
-import Spinner from "../Components/Spinner";
 
 export default class Submission extends React.Component {
 
