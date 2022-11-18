@@ -270,7 +270,7 @@ export default class Contribute extends React.Component {
                                 </Form.Text>
                             </div>
                             <Form.Label className="p-2">Check all tags applicable to your sharing: </Form.Label>
-                            
+                                
                             {Array.from({ length: this.state.tagsData.length }).map((_, idx) => (
                                 <Form.Check className = "tags-checkbox" inline label={this.state.tagsData[idx].tag_name} 
                                     name="tags_id" type='checkbox' 
